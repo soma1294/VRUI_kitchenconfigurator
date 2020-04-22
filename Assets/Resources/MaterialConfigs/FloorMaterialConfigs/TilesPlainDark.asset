@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38264d0b0441100459fa50a1714a2099, type: 3}
+  m_Name: TilesPlainDark
+  m_EditorClassIdentifier: 
+  preview: {fileID: 21300000, guid: dd6cdaf50a7c11f4398c855ba0130597, type: 3}
+  description: Tiles Blue
+  material: {fileID: 2100000, guid: 57ca057c4ba4e494386b6843a232c275, type: 2}

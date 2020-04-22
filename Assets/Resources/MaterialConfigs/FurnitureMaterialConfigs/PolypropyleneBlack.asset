@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38264d0b0441100459fa50a1714a2099, type: 3}
+  m_Name: PolypropyleneBlack
+  m_EditorClassIdentifier: 
+  preview: {fileID: 21300000, guid: f3b59c9972e358c4082bff4d477315b6, type: 3}
+  description: Black Plastic
+  material: {fileID: 2100000, guid: f579a1ad83a01904182b8d5346c0d883, type: 2}

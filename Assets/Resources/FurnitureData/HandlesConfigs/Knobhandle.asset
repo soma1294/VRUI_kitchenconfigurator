@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3df8afb95c239342a168289ee851a14, type: 3}
+  m_Name: Knobhandle
+  m_EditorClassIdentifier: 
+  preview: {fileID: 0}
+  description: Knob
+  handlesPrefab: {fileID: 1003923934965494, guid: 657fea7a93ed11e4bb7e1cab4e5354a4,
+    type: 2}
