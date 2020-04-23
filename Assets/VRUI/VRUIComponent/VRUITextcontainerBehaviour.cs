@@ -99,6 +99,7 @@ public class VRUITextcontainerBehaviour : MonoBehaviour
 
     public void ChangeTextTo(string text)
     {
-        textMesh.text = text;
+        if(textMesh)
+            textMesh.text = text;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class FloatValueContainer : MonoBehaviour
 {
-    public float value;
+    public float value = 0;
     public float minValue;
     public float maxValue;
 
@@ -13,11 +13,12 @@ public class FloatValueContainer : MonoBehaviour
     public class FloatValueContainerOnValueChanged : UnityEvent<float> { }
     public FloatValueContainerOnValueChanged OnValueChanged = new FloatValueContainerOnValueChanged();
 
-    private VRUITextcontainerBehaviour textcontainer;
+    public VRUITextcontainerBehaviour textcontainer;
 
     private void Start()
     {
-        textcontainer = GetComponent<VRUITextcontainerBehaviour>();
+        if(!textcontainer)
+            textcontainer = GetComponent<VRUITextcontainerBehaviour>();
         OnValueChanged.Invoke(value);
         if (textcontainer)
             textcontainer.ChangeTextTo(value.ToString("00.00 m"));
