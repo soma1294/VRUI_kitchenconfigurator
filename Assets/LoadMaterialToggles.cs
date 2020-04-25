@@ -6,20 +6,25 @@ public class LoadMaterialToggles : MonoBehaviour
 {
     public GameObject togglePrefab;
     public MaterialType materialType;
+    [HideInInspector]
+    public bool populated = false;
 
     private VRUIToggleGroupHelper toggleGroupHelper;
+    private Material materialToSet;
 
     // Start is called before the first frame update
     void Start()
     {
-        toggleGroupHelper = GetComponent<VRUIToggleGroupHelper>();
-        Populate();
+        //toggleGroupHelper = GetComponent<VRUIToggleGroupHelper>();
+        //Populate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        toggleGroupHelper = GetComponent<VRUIToggleGroupHelper>();
+        Populate();
+        enabled = false;
     }
 
     private void Populate()
@@ -52,9 +57,11 @@ public class LoadMaterialToggles : MonoBehaviour
                     materialToggle.BaseMaterial = materials[i];
                     materialToggle.ActiveMaterial = materials[i];
                     materialToggle.name = materials[i].name + "MaterialToggle";
-                    materialToggle.onVRUIToggleDown.AddListener(SetToggleMaterialInVariables);
+                    materialToggle.m_onVRUIToggleDown.AddListener(SetToggleMaterialInVariables);
+                    materialToggle.m_onVRUIToggleDown.AddListener( delegate { toggleGroupHelper.ToggleInGroupWasPressed(materialToggle.name); });
                     toggleGroupHelper.AddElementAtPosition(materialToggle, i);
                 }
+                populated = true;
             }
             else
             {
@@ -69,7 +76,7 @@ public class LoadMaterialToggles : MonoBehaviour
 
     public void SetToggleMaterialInVariables(string name)
     {
-        Material materialToSet = GetComponent<VRUIToggleBehaviour>().PhysicalToggle.GetComponent<MeshRenderer>().material;
+        materialToSet = GameObject.Find(name).GetComponent<VRUIToggleBehaviour>().PhysicalToggle.GetComponent<MeshRenderer>().material;
         switch (materialType)
         {
             case MaterialType.Workplate:

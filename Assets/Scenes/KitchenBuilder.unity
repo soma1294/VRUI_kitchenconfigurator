@@ -875,9 +875,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SubtractAmount
-        m_Mode: 4
+      - m_Target: {fileID: 640634778}
+        m_MethodName: StepForward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -929,7 +929,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: 0.32999998, z: 0}
+  anchorPosition: {x: 0.55, y: 1.13, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 409418037}
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: -0.85, z: 0}
+  anchorPosition: {x: -0.25, y: 0.25000006, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 819412951}
@@ -1181,7 +1181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96523648}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0.18333334, y: 0, z: 0}
+  m_LocalPosition: {x: -0.18333334, y: -0.000000059604645, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1858085279}
@@ -1212,7 +1212,18 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: f8728bfb97ab7f84097e6014b60d6db1, type: 2}
   m_onVRUIToggleDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935920518}
+        m_MethodName: ToggleInGroupWasPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onVRUIToggleStuck:
     m_PersistentCalls:
       m_Calls: []
@@ -1257,7 +1268,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.275, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.20999998, z: 0}
+  anchorPosition: {x: 0.15, y: 0.8900001, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 1
   parent: {fileID: 1935920517}
@@ -1316,6 +1327,7 @@ MonoBehaviour:
   togglePrefab: {fileID: 51311130263216671, guid: 6aa34290808f2d54d90da18088b21c59,
     type: 3}
   materialType: 1
+  populated: 0
 --- !u!114 &99165908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,7 +1425,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: 0.110000014, z: 0}
+  anchorPosition: {x: 0.15, y: 1.21, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1976874322}
@@ -1819,7 +1831,18 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: f8728bfb97ab7f84097e6014b60d6db1, type: 2}
   m_onVRUIToggleDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626346095}
+        m_MethodName: ToggleInGroupWasPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onVRUIToggleStuck:
     m_PersistentCalls:
       m_Calls: []
@@ -1864,7 +1887,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: 0.425, z: 0}
+  anchorPosition: {x: 0.15, y: 1.5250001, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 1
   parent: {fileID: 1626346090}
@@ -1986,7 +2009,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -2820,7 +2843,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: -0.15000004, z: 0}
+  anchorPosition: {x: 0.55, y: 0.65, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 819412951}
@@ -3043,9 +3066,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: AddAmount
-        m_Mode: 4
+      - m_Target: {fileID: 1147294135}
+        m_MethodName: StepBackward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3097,7 +3120,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.65, z: 0}
+  anchorPosition: {x: -0.25, y: 1.4499999, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1303086338}
@@ -3384,7 +3407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335796902}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0.18333334, y: 0, z: 0}
+  m_LocalPosition: {x: 0.18333334, y: -0.000000059604645, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1719558643}
@@ -3415,7 +3438,18 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: f8728bfb97ab7f84097e6014b60d6db1, type: 2}
   m_onVRUIToggleDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935920518}
+        m_MethodName: ToggleInGroupWasPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onVRUIToggleStuck:
     m_PersistentCalls:
       m_Calls: []
@@ -3460,7 +3494,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.275, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.20999998, z: 0}
+  anchorPosition: {x: 0.15, y: 0.8900001, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 1
   parent: {fileID: 1935920517}
@@ -3495,7 +3529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389789698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 0.27, z: 0}
+  m_LocalPosition: {x: 0.15, y: 0.26999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1326218990}
@@ -3582,7 +3616,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -3845,7 +3879,18 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: f8728bfb97ab7f84097e6014b60d6db1, type: 2}
   m_onVRUIToggleDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626346095}
+        m_MethodName: ToggleInGroupWasPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onVRUIToggleStuck:
     m_PersistentCalls:
       m_Calls: []
@@ -3890,7 +3935,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: 0.425, z: 0}
+  anchorPosition: {x: 0.15, y: 1.5250001, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 1
   parent: {fileID: 1626346090}
@@ -4012,7 +4057,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -4031,6 +4076,7 @@ GameObject:
   - component: {fileID: 410823931}
   - component: {fileID: 410823930}
   - component: {fileID: 410823929}
+  - component: {fileID: 410823932}
   m_Layer: 0
   m_Name: PlacementTypeButton
   m_TagString: Untagged
@@ -4046,7 +4092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410823927}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0.63, y: 0.425, z: 0}
+  m_LocalPosition: {x: 0.63, y: 0.42500007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 596225143}
@@ -4075,7 +4121,18 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: f8728bfb97ab7f84097e6014b60d6db1, type: 2}
   m_onVRUIButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 410823932}
+        m_MethodName: SwitchImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onVRUIButton:
     m_PersistentCalls:
       m_Calls: []
@@ -4119,13 +4176,27 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 2
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0.5, y: 1.2, z: 0}
+  anchorPosition: {x: 0.5, y: 2, z: 0}
   oldAnchor: 2
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
   lastParent: {fileID: 680990055}
   haveToUpdateRelativeValues: 1
   lastParentRotationValue: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+--- !u!114 &410823932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410823927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0358fd309f55c40a8f29f8a4d94588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image1: {fileID: 104832090}
+  image2: {fileID: 2023754257}
 --- !u!1 &423068560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,7 +4255,18 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: f8728bfb97ab7f84097e6014b60d6db1, type: 2}
   m_onVRUIToggleDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626346095}
+        m_MethodName: ToggleInGroupWasPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onVRUIToggleStuck:
     m_PersistentCalls:
       m_Calls: []
@@ -4229,7 +4311,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: 0.425, z: 0}
+  anchorPosition: {x: 0.15, y: 1.5250001, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 1
   parent: {fileID: 1626346090}
@@ -4450,7 +4532,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -4577,7 +4659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444987975}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0.33, y: 0, z: 0}
+  m_LocalPosition: {x: -0.33, y: -0.000000059604645, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1408026374}
@@ -4607,9 +4689,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: AddAmount
-        m_Mode: 4
+      - m_Target: {fileID: 99165908}
+        m_MethodName: StepBackward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4661,7 +4743,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.81, z: 0}
+  anchorPosition: {x: -0.25, y: 1.61, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1976874322}
@@ -5120,7 +5202,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: 0.17000002, z: 0}
+  anchorPosition: {x: 0.55, y: 0.97, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 164421741}
@@ -5870,7 +5952,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.15000004, z: 0}
+  anchorPosition: {x: 0.15, y: 0.65, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 819412951}
@@ -5942,6 +6024,7 @@ MonoBehaviour:
   togglePrefab: {fileID: 51311130263216671, guid: 6aa34290808f2d54d90da18088b21c59,
     type: 3}
   materialType: 5
+  populated: 0
 --- !u!114 &640634778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6039,7 +6122,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.37, z: 0}
+  anchorPosition: {x: 0.15, y: 0.73, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 409418037}
@@ -6172,7 +6255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667073530}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0.33, y: 0, z: 0}
+  m_LocalPosition: {x: 0.33, y: -0.000000059604645, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1237787729}
@@ -6202,9 +6285,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SubtractAmount
-        m_Mode: 4
+      - m_Target: {fileID: 99165908}
+        m_MethodName: StepForward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6256,7 +6339,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: 0.81, z: 0}
+  anchorPosition: {x: 0.55, y: 1.61, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1976874322}
@@ -6635,9 +6718,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SubtractAmount
-        m_Mode: 4
+      - m_Target: {fileID: 1935920519}
+        m_MethodName: StepForward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6689,7 +6772,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: 0.49, z: 0}
+  anchorPosition: {x: 0.55, y: 1.29, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 436304826}
@@ -6826,9 +6909,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: AddAmount
-        m_Mode: 4
+      - m_Target: {fileID: 640634778}
+        m_MethodName: StepBackward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6880,7 +6963,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.32999998, z: 0}
+  anchorPosition: {x: -0.25, y: 1.13, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 409418037}
@@ -7402,7 +7485,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.17000002, z: 0}
+  anchorPosition: {x: -0.25, y: 0.97, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 164421741}
@@ -7520,7 +7603,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: 0.97, z: 0}
+  anchorPosition: {x: 0.55, y: 1.77, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 389789699}
@@ -7878,7 +7961,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -9123,9 +9206,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SubtractAmount
-        m_Mode: 4
+      - m_Target: {fileID: 1147294135}
+        m_MethodName: StepForward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9177,7 +9260,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: 0.65, z: 0}
+  anchorPosition: {x: 0.55, y: 1.4499999, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1303086338}
@@ -9486,7 +9569,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.69000006, z: 0}
+  anchorPosition: {x: 0.15, y: 0.41000003, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1305018248}
@@ -9716,6 +9799,7 @@ MonoBehaviour:
   togglePrefab: {fileID: 51311130263216671, guid: 6aa34290808f2d54d90da18088b21c59,
     type: 3}
   materialType: 0
+  populated: 0
 --- !u!114 &1147294135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9813,7 +9897,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.050000012, z: 0}
+  anchorPosition: {x: 0.15, y: 1.0500001, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1303086338}
@@ -11086,7 +11170,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.15000004, z: 0}
+  anchorPosition: {x: 0.15, y: 0.65, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 819412951}
@@ -11247,7 +11331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303086337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15, y: -0.050000012, z: 0}
+  m_LocalPosition: {x: 0.15, y: -0.05000007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 238958570}
@@ -11334,7 +11418,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -11456,7 +11540,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -11575,7 +11659,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: -0.37, z: 0}
+  anchorPosition: {x: -0.25, y: 0.73, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 409418037}
@@ -11693,7 +11777,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.97, z: 0}
+  anchorPosition: {x: -0.25, y: 1.77, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 389789699}
@@ -11903,7 +11987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e870d270a662f14c975a94eeaf12fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  value: 0.5
   minValue: 0.1
   maxValue: 4
   OnValueChanged:
@@ -11940,7 +12024,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: 0.27, z: 0}
+  anchorPosition: {x: 0.15, y: 1.37, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 389789699}
@@ -12152,7 +12236,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.27, z: 0}
+  anchorPosition: {x: -0.25, y: 1.37, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 389789699}
@@ -12454,7 +12538,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.009999931, z: 0}
+  anchorPosition: {x: -0.25, y: 0.80999994, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1305018248}
@@ -13379,7 +13463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545400357}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0.33, y: 0.425, z: 0}
+  m_LocalPosition: {x: -0.33, y: 0.42500007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2114218722}
@@ -13452,7 +13536,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 0
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: -0.5, y: 1.2, z: 0}
+  anchorPosition: {x: -0.5, y: 2, z: 0}
   oldAnchor: 0
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -13789,7 +13873,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: -0.15000004, z: 0}
+  anchorPosition: {x: -0.25, y: 0.65, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 819412951}
@@ -13886,7 +13970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602743060}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.000000059604645, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 123254682}
@@ -13917,7 +14001,18 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: f8728bfb97ab7f84097e6014b60d6db1, type: 2}
   m_onVRUIToggleDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935920518}
+        m_MethodName: ToggleInGroupWasPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onVRUIToggleStuck:
     m_PersistentCalls:
       m_Calls: []
@@ -13962,7 +14057,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.275, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.20999998, z: 0}
+  anchorPosition: {x: 0.15, y: 0.89000005, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 1
   parent: {fileID: 1935920517}
@@ -14351,7 +14446,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.55, y: 0.009999931, z: 0}
+  anchorPosition: {x: 0.55, y: 0.80999994, z: 0}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1305018248}
@@ -14481,7 +14576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626346089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 0.425, z: 0}
+  m_LocalPosition: {x: 0.15, y: 0.42500007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 162741619}
@@ -14603,7 +14698,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -14733,6 +14828,104 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1666670063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666670064}
+  - component: {fileID: 1666670067}
+  - component: {fileID: 1666670066}
+  - component: {fileID: 1666670065}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666670064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666670063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.62, z: -1.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1742363917}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1666670065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666670063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd23b1003e101e14693dafbdc8b089c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focus: {fileID: 1824011045}
+  sensitivity: 2
+--- !u!81 &1666670066
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666670063}
+  m_Enabled: 1
+--- !u!20 &1666670067
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666670063}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1677720219
 GameObject:
   m_ObjectHideFlags: 0
@@ -14863,9 +15056,9 @@ MonoBehaviour:
   m_onVRUIButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: AddAmount
-        m_Mode: 4
+      - m_Target: {fileID: 1935920519}
+        m_MethodName: StepBackward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14917,7 +15110,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.49, z: 0}
+  anchorPosition: {x: -0.25, y: 1.29, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 436304826}
@@ -15321,7 +15514,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: -0.20999998, z: 0}
+  anchorPosition: {x: -0.25, y: 0.89000005, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 436304826}
@@ -15440,7 +15633,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: 0.110000014, z: 0}
+  anchorPosition: {x: -0.25, y: 1.21, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1976874322}
@@ -15546,6 +15739,178 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1742363916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742363917}
+  m_Layer: 0
+  m_Name: NonVR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1742363917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742363916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.557574, z: -0.482426}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1666670064}
+  - {fileID: 1772500715}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1772500714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1772500715}
+  - component: {fileID: 1772500721}
+  - component: {fileID: 1772500720}
+  - component: {fileID: 1772500719}
+  - component: {fileID: 1772500718}
+  - component: {fileID: 1772500717}
+  - component: {fileID: 1772500716}
+  m_Layer: 0
+  m_Name: FakeHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1772500715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772500714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_Children:
+  - {fileID: 1893043203}
+  m_Father: {fileID: 1742363917}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1772500716
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772500714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: -0.0000009536743}
+--- !u!54 &1772500717
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772500714}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1772500718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772500714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d333a0c41201d84c8ce29d37f3fc21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: 0
+  vruiGesture: 0
+--- !u!114 &1772500719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772500714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dfcb474a073de48a0a6394ff2a4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  keyboardControlsOn: 1
+--- !u!23 &1772500720
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772500714}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1772500721
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772500714}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1796454507
 GameObject:
   m_ObjectHideFlags: 0
@@ -15669,7 +16034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824011045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 680990055}
@@ -16182,6 +16547,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886432066}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1893043202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1893043203}
+  - component: {fileID: 1893043205}
+  - component: {fileID: 1893043204}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1893043203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893043202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1772500715}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1893043204
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893043202}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 46e5f6bfd5d20b64887a9086e9c2e7b6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1893043205
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893043202}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1896476678
 GameObject:
   m_ObjectHideFlags: 0
@@ -16565,7 +17008,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0.15, y: -0.20999998, z: 0}
+  anchorPosition: {x: 0.15, y: 0.89000005, z: 0}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 436304826}
@@ -16833,7 +17276,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0, y: 0.5, z: 0}
+  anchorPosition: {x: 0, y: 1.6, z: 0}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 680990055}
@@ -16952,7 +17395,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: -0.69000006, z: 0}
+  anchorPosition: {x: -0.25, y: 0.40999997, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1305018248}
@@ -18262,7 +18705,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: -0.050000012, z: 0}
+  anchorPosition: {x: -0.25, y: 1.05, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1303086338}
@@ -18381,7 +18824,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: -0.25, y: -0.53, z: 0}
+  anchorPosition: {x: -0.25, y: 0.57000005, z: 0}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 164421741}

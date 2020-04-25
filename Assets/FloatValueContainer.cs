@@ -9,6 +9,8 @@ public class FloatValueContainer : MonoBehaviour
     public float minValue;
     public float maxValue;
 
+    private Prefs prefs;
+
     [System.Serializable]
     public class FloatValueContainerOnValueChanged : UnityEvent<float> { }
     public FloatValueContainerOnValueChanged OnValueChanged = new FloatValueContainerOnValueChanged();

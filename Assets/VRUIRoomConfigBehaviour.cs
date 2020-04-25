@@ -14,7 +14,7 @@ public class VRUIRoomConfigBehaviour : MonoBehaviour {
     public Transform roomModel;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         prefs = new Prefs();
         prefs.Load();
         setRoomModelScale();

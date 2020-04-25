@@ -49,7 +49,7 @@ public class VRUIToggleBehaviour : MonoBehaviour
     public class VRUIOnToggleDownEvent : UnityEvent<string> { }
     [Header("UnityEvents")]
     [SerializeField]
-    private VRUIOnToggleDownEvent m_onVRUIToggleDown = new VRUIOnToggleDownEvent();
+    public VRUIOnToggleDownEvent m_onVRUIToggleDown;
     public VRUIOnToggleDownEvent onVRUIToggleDown
     {
         get { return m_onVRUIToggleDown; }
@@ -59,7 +59,7 @@ public class VRUIToggleBehaviour : MonoBehaviour
     [System.Serializable]
     public class VRUIOnToggleStuckEvent : UnityEvent<string> { }
     [SerializeField]
-    private VRUIOnToggleStuckEvent m_onVRUIToggleStuck = new VRUIOnToggleStuckEvent();
+    private VRUIOnToggleStuckEvent m_onVRUIToggleStuck;
     public VRUIOnToggleStuckEvent onVRUIToggleStuck
     {
         get { return m_onVRUIToggleStuck; }
@@ -69,7 +69,7 @@ public class VRUIToggleBehaviour : MonoBehaviour
     [System.Serializable]
     public class VRUIOnToggleUpEvent : UnityEvent<string> { }
     [SerializeField]
-    private VRUIOnToggleUpEvent m_onVRUIToggleUp = new VRUIOnToggleUpEvent();
+    private VRUIOnToggleUpEvent m_onVRUIToggleUp;
     public VRUIOnToggleUpEvent onVRUIToggleUp
     {
         get { return m_onVRUIToggleUp; }
