@@ -58,11 +58,19 @@ public abstract class KitchenElement : MonoBehaviour {
             SetScale();
             GenerateCorpus();
             //Debug.Log(gameObject.name + ": " + (tempParent == null) + " " + (tempParent != null) + " " + (tempParent.parent.gameObject.name) + " " + onGround + " " + (previousBaseHeight != Variables.baseHeightInMM));
-            if ((tempParent == null || (tempParent != null && tempParent.parent.gameObject.GetComponent<KitchenElement>() == null)) 
-                && onGround && previousBaseHeight != Variables.baseHeightInMM) {
-                float changeAmount = (Variables.baseHeightInMM - previousBaseHeight) / 1000f;
-                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
-                previousBaseHeight = Variables.baseHeightInMM;
+            try
+            {
+                if ((tempParent == null || (tempParent != null && tempParent.parent.gameObject.GetComponent<KitchenElement>() == null))
+                && onGround && previousBaseHeight != Variables.baseHeightInMM)
+                {
+                    float changeAmount = (Variables.baseHeightInMM - previousBaseHeight) / 1000f;
+                    this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
+                    previousBaseHeight = Variables.baseHeightInMM;
+                }
+            }
+            catch (System.Exception)
+            {
+                Debug.LogError("Exception has been catched!");
             }
             this.transform.parent = tempParent;
             tempParent = null;

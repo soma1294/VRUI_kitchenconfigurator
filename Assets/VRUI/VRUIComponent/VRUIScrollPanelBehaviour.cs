@@ -85,7 +85,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
             DisplayCorrectChildElements();
             ArrangeElements();
         }*/
-        lastChildCount = transform.childCount;
+        lastChildCount = transform.childCount;        
     }
 
     public void ArrangeElements()

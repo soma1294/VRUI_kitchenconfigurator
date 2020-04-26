@@ -22,7 +22,7 @@ public class VRUITextcontainerBehaviour : MonoBehaviour
     private TextMeshPro textMesh;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         startRotation = transform.eulerAngles;
         textcontainer = transform.Find("TMPro Text").gameObject;

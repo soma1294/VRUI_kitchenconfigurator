@@ -21,8 +21,9 @@ public class VRUIToggleGroupHelper : MonoBehaviour
     {
         foreach (VRUIToggleBehaviour toggle in toggleList)
         {
-            if (toggle.name != name)
+            if (toggle.ToggleIsStuck && toggle.name != name)
             {
+                //Debug.Log("ToggleWithNameNowUnstuck = " + toggle.name);
                 toggle.ToggleIsStuck = false;
             }
         }

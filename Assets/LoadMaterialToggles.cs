@@ -56,9 +56,10 @@ public class LoadMaterialToggles : MonoBehaviour
                     materialToggle = toggle.GetComponent<VRUIToggleBehaviour>();
                     materialToggle.BaseMaterial = materials[i];
                     materialToggle.ActiveMaterial = materials[i];
-                    materialToggle.name = materials[i].name + "MaterialToggle";
+                    string toggleName = materials[i].name + "MaterialToggle";
+                    materialToggle.name = toggleName;
                     materialToggle.m_onVRUIToggleDown.AddListener(SetToggleMaterialInVariables);
-                    materialToggle.m_onVRUIToggleDown.AddListener( delegate { toggleGroupHelper.ToggleInGroupWasPressed(materialToggle.name); });
+                    materialToggle.m_onVRUIToggleDown.AddListener( delegate { toggleGroupHelper.ToggleInGroupWasPressed(toggleName); });
                     toggleGroupHelper.AddElementAtPosition(materialToggle, i);
                 }
                 populated = true;
