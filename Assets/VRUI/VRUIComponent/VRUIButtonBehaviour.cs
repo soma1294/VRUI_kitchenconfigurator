@@ -40,10 +40,10 @@ public class VRUIButtonBehaviour : MonoBehaviour
     private Material activeMaterial;
     //Events that fire when the button gets activated/changes material.
     [System.Serializable]
-    public class VRUIOnButtonDownEvent : UnityEvent { }
+    public class VRUIOnButtonDownEvent : UnityEvent<string> { }
     [Header("UnityEvents")]
     [SerializeField]
-    private VRUIOnButtonDownEvent m_onVRUIButtonDown = new VRUIOnButtonDownEvent();
+    public VRUIOnButtonDownEvent m_onVRUIButtonDown;
     public VRUIOnButtonDownEvent onVRUIButtonDown
     {
         get { return m_onVRUIButtonDown; }
@@ -51,9 +51,9 @@ public class VRUIButtonBehaviour : MonoBehaviour
     }
     //Events that fire every frame the button is active.
     [System.Serializable]
-    public class VRUIOnButtonEvent : UnityEvent { }
+    public class VRUIOnButtonEvent : UnityEvent<string> { }
     [SerializeField]
-    private VRUIOnButtonEvent m_onVRUIButton = new VRUIOnButtonEvent();
+    private VRUIOnButtonEvent m_onVRUIButton;
     public VRUIOnButtonEvent onVRUIButton
     {
         get { return m_onVRUIButton; }
@@ -61,9 +61,9 @@ public class VRUIButtonBehaviour : MonoBehaviour
     }
     //Events that fire when the Button deactivates.
     [System.Serializable]
-    public class VRUIOnButtonUpEvent : UnityEvent { }
+    public class VRUIOnButtonUpEvent : UnityEvent<string> { }
     [SerializeField]
-    private VRUIOnButtonUpEvent m_onVRUIButtonUp = new VRUIOnButtonUpEvent();
+    private VRUIOnButtonUpEvent m_onVRUIButtonUp;
     public VRUIOnButtonUpEvent onVRUIButtonUp
     {
         get { return m_onVRUIButtonUp; }
@@ -179,7 +179,7 @@ public class VRUIButtonBehaviour : MonoBehaviour
         if (getVRUIButton)
         {
             meshRenderer.material = activeMaterial;
-            m_onVRUIButton.Invoke();
+            m_onVRUIButton.Invoke(name);
         }
         else
         {
@@ -306,7 +306,7 @@ public class VRUIButtonBehaviour : MonoBehaviour
             getVRUIButtonDown = value;
             if (getVRUIButtonDown)
             {
-                m_onVRUIButtonDown.Invoke();
+                m_onVRUIButtonDown.Invoke(name);
             }
         }
     }
@@ -322,7 +322,7 @@ public class VRUIButtonBehaviour : MonoBehaviour
             getVRUIButtonUp = value;
             if (getVRUIButtonUp)
             {
-                m_onVRUIButtonUp.Invoke();
+                m_onVRUIButtonUp.Invoke(name);
             }
         }
     }
