@@ -130,7 +130,7 @@ public class VRUIToggleBehaviour : MonoBehaviour
             startPosition = currentPosition = physicalToggle.transform.localPosition;
             deltaPosition = Vector3.zero;
             getVRUIToggleDown = false;
-            getVRUIToggleUp = true;
+            getVRUIToggleUp = false;
         }
     }
 

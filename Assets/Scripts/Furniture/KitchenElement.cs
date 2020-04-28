@@ -14,7 +14,7 @@ public abstract class KitchenElement : MonoBehaviour {
 
     public Vector3 dimensionChange = Vector3.zero;
 
-    public Transform tempParent;
+    public Transform tempParent = null;
 
     public Mesh meshe;
 
@@ -58,20 +58,30 @@ public abstract class KitchenElement : MonoBehaviour {
             SetScale();
             GenerateCorpus();
             //Debug.Log(gameObject.name + ": " + (tempParent == null) + " " + (tempParent != null) + " " + (tempParent.parent.gameObject.name) + " " + onGround + " " + (previousBaseHeight != Variables.baseHeightInMM));
-            try
+            if (onGround && previousBaseHeight != Variables.baseHeightInMM)
             {
-                if ((tempParent == null || (tempParent != null && tempParent.parent.gameObject.GetComponent<KitchenElement>() == null))
-                && onGround && previousBaseHeight != Variables.baseHeightInMM)
+                if (tempParent == null)
+                {
+                    float changeAmount = (Variables.baseHeightInMM - previousBaseHeight) / 1000f;
+                    this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
+                    previousBaseHeight = Variables.baseHeightInMM;
+                }
+                else if(tempParent.parent.gameObject.GetComponent<KitchenElement>() == null)
                 {
                     float changeAmount = (Variables.baseHeightInMM - previousBaseHeight) / 1000f;
                     this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
                     previousBaseHeight = Variables.baseHeightInMM;
                 }
             }
-            catch (System.Exception)
+            /*
+            if ((tempParent == null || (tempParent != null && tempParent.parent.gameObject.GetComponent<KitchenElement>() == null))
+            && onGround && previousBaseHeight != Variables.baseHeightInMM)
             {
-                Debug.LogError("Exception has been catched!");
+                float changeAmount = (Variables.baseHeightInMM - previousBaseHeight) / 1000f;
+                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
+                previousBaseHeight = Variables.baseHeightInMM;
             }
+            */
             this.transform.parent = tempParent;
             tempParent = null;
 

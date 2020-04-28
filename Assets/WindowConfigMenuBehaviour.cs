@@ -10,6 +10,8 @@ public class WindowConfigMenuBehaviour : MonoBehaviour
 
     public GameObject windowConfigPrefab;
 
+    private int i = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,19 +32,31 @@ public class WindowConfigMenuBehaviour : MonoBehaviour
                 break;
         }
         GameObject currentWindow;
-        WindowConfigBehaviour currentWindowConfig;
+        VRUIWindowConfigBehaviour currentWindowConfig;
         foreach (Window window in windows)
         {
-            //currentWindow = Instantiate(windowConfigPrefab, transform);
-            //currentWindowConfig = currentWindow?.GetComponent<WindowConfigBehaviour>();
-            //currentWindowConfig.window = window;
-            //currentWindowConfig.toggleGroup = toggleGroup;
+            currentWindow = Instantiate(windowConfigPrefab, transform);
+            currentWindowConfig = currentWindow?.GetComponent<VRUIWindowConfigBehaviour>();
+            currentWindowConfig.window = window;
+            currentWindowConfig.title.ChangeTextTo("Window " + (i + 1));
+            currentWindowConfig.rightOffset.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+            currentWindowConfig.bottomOffset.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+            currentWindowConfig.width.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+            currentWindowConfig.height.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+            i++;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddWindow()
     {
-        
+        GameObject currentWindow = Instantiate(windowConfigPrefab, transform);
+        VRUIWindowConfigBehaviour currentWindowConfig = currentWindow?.GetComponent<VRUIWindowConfigBehaviour>();
+        currentWindowConfig.window = new Window(1000, 1000, 1000, 600);
+        currentWindowConfig.title.ChangeTextTo("Window " + (i + 1));
+        currentWindowConfig.rightOffset.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+        currentWindowConfig.bottomOffset.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+        currentWindowConfig.width.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+        currentWindowConfig.height.OnValueChanged.AddListener(currentWindowConfig.UpdateValues);
+        i++;
     }
 }

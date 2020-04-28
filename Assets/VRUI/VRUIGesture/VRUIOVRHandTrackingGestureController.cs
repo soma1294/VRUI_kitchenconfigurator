@@ -11,6 +11,9 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
     public bool deactivateThumbColliderOnPointing;
     public Collider thumbCollider;
 
+    public bool deactivateGrabColliderOnPointing;
+    public Collider grabCollider;
+
     public float minPinchStrength;
     public float maxPinchStrengthForPointing;
     public Collider[] collidersToDeactivateOnPinch;
@@ -38,6 +41,10 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                 {
                     thumbCollider.enabled = true;
                 }
+                if (deactivateGrabColliderOnPointing)
+                {
+                    grabCollider.enabled = true;
+                }
                 if (collidersToDeactivateOnPinch.Length > 0)
                 {
                     foreach (Collider collider in collidersToDeactivateOnPinch)
@@ -54,6 +61,10 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                 {
                     thumbCollider.enabled = false;
                 }
+                if (deactivateGrabColliderOnPointing)
+                {
+                    grabCollider.enabled = false;
+                }
                 if (collidersToDeactivateOnPinch.Length > 0)
                 {
                     foreach (Collider collider in collidersToDeactivateOnPinch)
@@ -68,6 +79,10 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                 if (deactivateThumbColliderOnPointing)
                 {
                     thumbCollider.enabled = true;
+                }
+                if (deactivateGrabColliderOnPointing)
+                {
+                    grabCollider.enabled = true;
                 }
                 if (collidersToDeactivateOnPinch.Length > 0)
                 {

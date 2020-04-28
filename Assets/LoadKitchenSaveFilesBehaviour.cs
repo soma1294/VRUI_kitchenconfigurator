@@ -28,7 +28,7 @@ public class LoadKitchenSaveFilesBehaviour : MonoBehaviour
             string name = fileInfos[i].Name;
             button.name = name;
             button.transform.GetChild(0).GetChild(0).GetComponent<VRUITextcontainerBehaviour>().ChangeTextTo(name);
-            button.m_onVRUIButtonDown.AddListener(delegate { loadAndSave.LoadData(name); });
+            button.m_onVRUIButtonDown.AddListener(delegate { loadAndSave.LoadData("./KitchenData/" + name); });
         }
     }
 
