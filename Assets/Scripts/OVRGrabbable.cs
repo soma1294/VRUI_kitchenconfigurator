@@ -36,10 +36,36 @@ public class OVRGrabbable : MonoBehaviour
     protected bool m_grabbedKinematic = false;
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
+    protected OVRGrabber m_hoveredBy = null;
 
-	/// <summary>
-	/// If true, the object can currently be grabbed.
-	/// </summary>
+    //Beginnning of custom code
+    public bool isHovered
+    {
+        get { return m_hoveredBy != null; }
+    }
+
+    public OVRGrabber hoveredBy
+    {
+        get { return m_hoveredBy; }
+    }
+
+    virtual public void HoverBegin(OVRGrabber hand)
+    {
+        m_hoveredBy = hand;
+        //m_hoverCollider = hoverPoint;
+    }
+
+    virtual public void HoverEnd()
+    {
+        m_hoveredBy = null;
+        //m_hoverCollider = null;
+    }
+
+    //End of custom code
+
+    /// <summary>
+    /// If true, the object can currently be grabbed.
+    /// </summary>
     public bool allowOffhandGrab
     {
         get { return m_allowOffhandGrab; }

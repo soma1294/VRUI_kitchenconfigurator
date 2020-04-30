@@ -36,13 +36,11 @@ public class Snappable : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if (isBeeingHovered)
+        if (ovrGrababble.isHovered)
         {
             hoverGrabber = ovrGrababble.hoveredBy;
             HandHoverUpdate(hoverGrabber);
         }
-        */
         if (inHand)
         {
             if (this.previewBox == null)

@@ -34,4 +34,6 @@ public static class Variables {
 
 	public static KitchenData loadedData;
 	public static string loadedFile;
+
+    public static int sceneToLoadIndex;
 }

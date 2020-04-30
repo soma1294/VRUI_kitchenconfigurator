@@ -46,13 +46,8 @@ public class VRUIRoomConfigBehaviour : MonoBehaviour {
 
     public void startKitchenBuilder() {
         prefs.Save();
-        SceneManager.LoadScene("KitchenBuilder");
-    }
-
-    public void startButtonDemo()
-    {
-        prefs.Save();
-        SceneManager.LoadScene("ButtonDemo");
+        Variables.sceneToLoadIndex = 2;
+        SceneManager.LoadScene("LoadingScene");
     }
 
     private void setRoomModelScale() {

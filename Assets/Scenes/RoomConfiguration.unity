@@ -231,7 +231,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.2444365, z: 0.90443647}
+  anchorPosition: {x: 0, y: 3.5644364, z: 0.90443647}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 565233045}
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.05, z: 0}
-  anchorPosition: {x: 0, y: 3.4813175, z: 1.1413172}
+  anchorPosition: {x: 0, y: 3.8013175, z: 1.1413172}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1086084548}
@@ -1526,7 +1526,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 908953477}
@@ -3304,7 +3304,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: -0.5, y: 3.2444367, z: 0.90443647}
+  anchorPosition: {x: -0.5, y: 3.5644367, z: 0.90443647}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1752430625}
@@ -3724,14 +3724,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
-      propertyPath: m_Name
-      value: OVRCameraRig
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3775,6 +3767,14 @@ PrefabInstance:
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_Name
+      value: OVRCameraRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
@@ -3889,7 +3889,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: 0.5, y: 3.4707108, z: 1.1307106}
+  anchorPosition: {x: 0.5, y: 3.7907107, z: 1.1307106}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 652986788}
@@ -4120,12 +4120,12 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 1
   parentSize: {x: 0.5, y: 0.35, z: 0}
-  anchorPosition: {x: 0, y: 3.6474874, z: 1.3074872}
+  anchorPosition: {x: 0, y: 3.9674873, z: 1.3074872}
   oldAnchor: 1
   vruiPositionerChangedTransform: 0
   parent: {fileID: 335907665}
   lastParent: {fileID: 335907665}
-  haveToUpdateRelativeValues: 0
+  haveToUpdateRelativeValues: 1
   lastParentRotationValue: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
 --- !u!1 &282940876
 GameObject:
@@ -4389,7 +4389,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.4707108, z: 1.1307106}
+  anchorPosition: {x: 0, y: 3.7907107, z: 1.1307106}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 961657779}
@@ -5133,7 +5133,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.45, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.576777, z: 1.2367767}
+  anchorPosition: {x: 0, y: 3.896777, z: 1.2367767}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 267062878}
@@ -6106,12 +6106,12 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1286084586}
   lastParent: {fileID: 1286084586}
-  haveToUpdateRelativeValues: 1
+  haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
 --- !u!1 &566535394
 GameObject:
@@ -6395,7 +6395,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.2444365, z: 0.90443647}
+  anchorPosition: {x: 0, y: 3.5644364, z: 0.90443647}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 565233045}
@@ -6625,7 +6625,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1602880782}
@@ -7199,7 +7199,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.05, z: 0}
-  anchorPosition: {x: 0, y: 3.4813175, z: 1.1413172}
+  anchorPosition: {x: 0, y: 3.8013175, z: 1.1413172}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1086084548}
@@ -7499,7 +7499,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.4707108, z: 1.1307106}
+  anchorPosition: {x: 0, y: 3.7907107, z: 1.1307106}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 961657779}
@@ -8261,7 +8261,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.4707108, z: 1.1307106}
+  anchorPosition: {x: 0, y: 3.7907107, z: 1.1307106}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 961657779}
@@ -8387,7 +8387,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.35, z: 0}
-  anchorPosition: {x: 0, y: 3.4, z: 1.06}
+  anchorPosition: {x: 0, y: 3.72, z: 1.06}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 335907665}
@@ -8629,7 +8629,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1286084586}
@@ -8747,7 +8747,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: -0.5, y: 3.2444367, z: 0.90443647}
+  anchorPosition: {x: -0.5, y: 3.5644367, z: 0.90443647}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1752430625}
@@ -9032,7 +9032,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: -0.5, y: 3.3575737, z: 1.0175736}
+  anchorPosition: {x: -0.5, y: 3.6775737, z: 1.0175736}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1090136828}
@@ -9431,7 +9431,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.05, z: 0}
-  anchorPosition: {x: 0, y: 3.4813175, z: 1.1413172}
+  anchorPosition: {x: 0, y: 3.8013175, z: 1.1413172}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1086084548}
@@ -9891,7 +9891,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 908953477}
@@ -10124,7 +10124,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1602880782}
@@ -10733,7 +10733,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.3575737, z: 1.0175736}
+  anchorPosition: {x: 0, y: 3.6775737, z: 1.0175736}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1376658166}
@@ -11073,7 +11073,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: 0.5, y: 3.2444367, z: 0.90443647}
+  anchorPosition: {x: 0.5, y: 3.5644367, z: 0.90443647}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1752430625}
@@ -11347,7 +11347,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: -0.5, y: 3.3575737, z: 1.0175736}
+  anchorPosition: {x: -0.5, y: 3.6775737, z: 1.0175736}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1090136828}
@@ -11466,7 +11466,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: -0.5, y: 3.4707108, z: 1.1307106}
+  anchorPosition: {x: -0.5, y: 3.7907107, z: 1.1307106}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 652986788}
@@ -11588,7 +11588,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.35, z: 0}
-  anchorPosition: {x: 0, y: 3.4, z: 1.06}
+  anchorPosition: {x: 0, y: 3.72, z: 1.06}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 335907665}
@@ -12130,7 +12130,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.05, z: 0}
-  anchorPosition: {x: 0, y: 3.4813175, z: 1.1413172}
+  anchorPosition: {x: 0, y: 3.8013175, z: 1.1413172}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1086084548}
@@ -12354,7 +12354,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: -0.5, y: 3.4707108, z: 1.1307106}
+  anchorPosition: {x: -0.5, y: 3.7907107, z: 1.1307106}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 652986788}
@@ -12472,7 +12472,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.4707108, z: 1.1307106}
+  anchorPosition: {x: 0, y: 3.7907107, z: 1.1307106}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 961657779}
@@ -12601,7 +12601,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.45, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.576777, z: 1.2367767}
+  anchorPosition: {x: 0, y: 3.896777, z: 1.2367767}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 267062878}
@@ -12661,7 +12661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348088961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4, z: 1.06}
+  m_LocalPosition: {x: 0, y: 2.72, z: 1.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2013079537}
@@ -12785,7 +12785,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0.5, y: 3.127764, z: 0.78776383}
+  anchorPosition: {x: 0.5, y: 3.447764, z: 0.78776383}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1920384521}
@@ -13203,7 +13203,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1286084586}
@@ -14283,7 +14283,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 3
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: -0.5, y: 3.127764, z: 0.78776383}
+  anchorPosition: {x: -0.5, y: 3.447764, z: 0.78776383}
   oldAnchor: 3
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1920384521}
@@ -14704,7 +14704,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.45, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.576777, z: 1.2367767}
+  anchorPosition: {x: 0, y: 3.896777, z: 1.2367767}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 267062878}
@@ -14854,7 +14854,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.35, z: 0}
-  anchorPosition: {x: 0, y: 3.4, z: 1.06}
+  anchorPosition: {x: 0, y: 3.72, z: 1.06}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 335907665}
@@ -15141,7 +15141,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.3575737, z: 1.0175736}
+  anchorPosition: {x: 0, y: 3.6775737, z: 1.0175736}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1376658166}
@@ -16136,7 +16136,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.3, z: 0}
-  anchorPosition: {x: 0, y: 3.3292894, z: 0.9892893}
+  anchorPosition: {x: 0, y: 3.6492894, z: 0.9892893}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1602880782}
@@ -16532,7 +16532,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.2444365, z: 0.90443647}
+  anchorPosition: {x: 0, y: 3.5644364, z: 0.90443647}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 565233045}
@@ -17028,7 +17028,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.2444365, z: 0.90443647}
+  anchorPosition: {x: 0, y: 3.5644364, z: 0.90443647}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 565233045}
@@ -17432,7 +17432,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.05, z: 0}
-  anchorPosition: {x: 0, y: 3.4813175, z: 1.1413172}
+  anchorPosition: {x: 0, y: 3.8013175, z: 1.1413172}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1086084548}
@@ -17643,7 +17643,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 5
   parentSize: {x: 0.5, y: 0.075, z: 0}
-  anchorPosition: {x: 0.5, y: 3.3575737, z: 1.0175736}
+  anchorPosition: {x: 0.5, y: 3.6775737, z: 1.0175736}
   oldAnchor: 5
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1090136828}
@@ -17763,7 +17763,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.5, y: 0.35, z: 0}
-  anchorPosition: {x: 0, y: 3.4, z: 1.06}
+  anchorPosition: {x: 0, y: 3.72, z: 1.06}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 335907665}
@@ -18781,7 +18781,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.3575737, z: 1.0175736}
+  anchorPosition: {x: 0, y: 3.6775737, z: 1.0175736}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1376658166}
@@ -18899,7 +18899,7 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
   parentSize: {x: 0.4, y: 0.075, z: 0}
-  anchorPosition: {x: 0, y: 3.3575737, z: 1.0175736}
+  anchorPosition: {x: 0, y: 3.6775737, z: 1.0175736}
   oldAnchor: 4
   vruiPositionerChangedTransform: 0
   parent: {fileID: 1376658166}

@@ -85,7 +85,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
             DisplayCorrectChildElements();
             ArrangeElements();
         }*/
-        lastChildCount = transform.childCount;        
+        lastChildCount = transform.childCount;
     }
 
     public void ArrangeElements()
@@ -105,7 +105,8 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
                 child.position = GetPositionOfChildElement(i, firstElementPosition, sliceSize);
                 i++;
             }
-        } else if (layout == Layout.TopToBottom)
+        }
+        else if (layout == Layout.TopToBottom)
         {
             sliceSize = SliceSizeHorizontally();
             //The position of the first element is half the size of the panel plus half the size of one slice from the center of the panel.
@@ -152,9 +153,11 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
     private Vector3 GetPositionOfChildElement(int child, Vector3 firstElementPosition, float sliceSize)
     {
         if (layout == Layout.LeftToRight)
-            return firstElementPosition + new Vector3((child - positionInList) * sliceSize, 0f, 0f);
-        if(layout == Layout.TopToBottom)
-            return firstElementPosition - new Vector3(0f, (child - positionInList) * sliceSize, 0f);
+            return firstElementPosition + transform.right * (child - positionInList) * sliceSize;
+        //return firstElementPosition + new Vector3((child - positionInList) * sliceSize, 0f, 0f);
+        if (layout == Layout.TopToBottom)
+            return firstElementPosition + transform.up * (child - positionInList) * sliceSize;
+        //return firstElementPosition - new Vector3(0f, (child - positionInList) * sliceSize, 0f);
         Debug.LogError("GetPositionOfChildElement: No Layout chosen! Returned Vector zero...");
         return Vector3.zero;
     }
@@ -169,10 +172,11 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         {
             for (int i = positionInList; i < (positionInList + MaxDisplayedElements); i++)
             {
-                if(!transform.GetChild(i).gameObject.activeSelf)
+                if (!transform.GetChild(i).gameObject.activeSelf)
                     transform.GetChild(i).gameObject.SetActive(true);
             }
-        } else
+        }
+        else
         {
             Debug.Log("Max Displayed Elements is greater than the amount of children of this VRUIScrollPanelBehaviour: " + name + "\nAll children will be displayed.");
             for (int i = 0; i < transform.childCount; i++)
@@ -181,7 +185,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
                     transform.GetChild(i).gameObject.SetActive(true);
             }
         }
-        if(positionInList > 0)
+        if (positionInList > 0)
         {
             for (int i = 0; i < transform.childCount && i < positionInList; i++)
             {
@@ -208,11 +212,12 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         {
             positionInList = elementListSize - MaxDisplayedElements;
             StepToEnd();
-        } else if(MaxDisplayedElements < transform.childCount)
+        }
+        else if (MaxDisplayedElements < transform.childCount)
         {
             positionInList += scrollStepSize;
         }
-        if(transform.childCount > 0)
+        if (transform.childCount > 0)
         {
             DisplayCorrectChildElements();
             ArrangeElements();

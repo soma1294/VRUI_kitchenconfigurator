@@ -195,6 +195,20 @@ public class OVRGrabber : MonoBehaviour
         m_grabCandidates[grabbable] = refCount + 1;
     }
 
+    private void OnTriggerStay(Collider otherCollider)
+    {
+        //Code used for hover
+        OVRGrabbable oGrabbable = otherCollider.gameObject.GetComponent<OVRGrabbable>();
+        if (!oGrabbable) return;
+        //Enables HandHoverUpdate of the grabbed Snappable
+        Snappable snappable = otherCollider.gameObject.GetComponent<Snappable>();
+        if (snappable)
+        {
+            snappable.HandHoverUpdate(this);
+        }
+        oGrabbable.HoverBegin(this);
+    }
+
     void OnTriggerExit(Collider otherCollider)
     {
 		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>();
@@ -216,6 +230,13 @@ public class OVRGrabber : MonoBehaviour
         {
             m_grabCandidates.Remove(grabbable);
         }
+        //Disables HandHoverUpdate of the grabbed Snappable
+        Snappable snappable = otherCollider.GetComponent<Snappable>();
+        if (snappable)
+        {
+            snappable.HandHoverUpdate(this);
+        }
+        grabbable.HoverEnd();
     }
 
     protected void CheckForGrabOrRelease(float prevFlex)

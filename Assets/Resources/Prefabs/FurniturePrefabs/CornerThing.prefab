@@ -197,7 +197,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591421668195124}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -257,7 +257,6 @@ MonoBehaviour:
   snapPosition: {x: 0, y: 0, z: 0}
   snapRotation: {x: 0, y: 0, z: 0, w: 0}
   kitchenFurniture: {fileID: 0}
-  isBeeingHovered: 0
   hoverGrabber: {fileID: 0}
 --- !u!114 &114437368393399714
 MonoBehaviour:
