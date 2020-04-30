@@ -438,12 +438,12 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 2
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: 0.5, y: 1.4, z: 0}
+  anchorPosition: {x: 0.5, y: 1.4, z: 0.3}
   oldAnchor: 2
   vruiPositionerChangedTransform: 0
   parent: {fileID: 83634870}
   lastParent: {fileID: 83634870}
-  haveToUpdateRelativeValues: 0
+  haveToUpdateRelativeValues: 1
   lastParentRotationValue: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
 --- !u!1 &24735330
 GameObject:
@@ -3825,7 +3825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181043541}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.000000014901161, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1709778281}
@@ -4407,6 +4407,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_Name
+      value: OVRCameraRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4449,14 +4457,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
-      propertyPath: m_Name
-      value: OVRCameraRig
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
@@ -15546,7 +15546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672705228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 83634870}
@@ -21906,7 +21906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074024908}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0.26666665, y: 0, z: 0}
+  m_LocalPosition: {x: -0.13333333, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357436393}
@@ -32977,7 +32977,7 @@ MonoBehaviour:
   vruiPositionerChangedTransform: 0
   parent: {fileID: 83634870}
   lastParent: {fileID: 83634870}
-  haveToUpdateRelativeValues: 0
+  haveToUpdateRelativeValues: 1
   lastParentRotationValue: {x: -0, y: -0, z: -0, w: 1}
 --- !u!1 &1545400357
 GameObject:
@@ -36417,7 +36417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697709793}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.13333336, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1071541857}
@@ -37332,6 +37332,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_Name
+      value: OVRCameraRigFromRoomConfig
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -37375,14 +37383,6 @@ PrefabInstance:
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
-      propertyPath: m_Name
-      value: OVRCameraRigFromRoomConfig
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 97669439, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_TagString
@@ -41022,12 +41022,12 @@ MonoBehaviour:
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 0
   parentSize: {x: 0.5, y: 0.5, z: 0}
-  anchorPosition: {x: -0.5, y: 1.4, z: 0}
+  anchorPosition: {x: -0.5, y: 1.4, z: 0.3}
   oldAnchor: 0
   vruiPositionerChangedTransform: 0
   parent: {fileID: 83634870}
   lastParent: {fileID: 83634870}
-  haveToUpdateRelativeValues: 0
+  haveToUpdateRelativeValues: 1
   lastParentRotationValue: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
 --- !u!1 &1893043202
 GameObject:

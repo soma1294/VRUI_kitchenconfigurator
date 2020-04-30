@@ -8,8 +8,6 @@ public class Prefs {
     public float roomWidth;
     public float roomDepth;
 
-
-
     public void Load() {
         roomHeight = PlayerPrefs.GetFloat("roomHeight", 1f);
         roomWidth = PlayerPrefs.GetFloat("roomWidth", 1f);
