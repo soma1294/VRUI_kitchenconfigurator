@@ -156,7 +156,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
             return firstElementPosition + transform.right * (child - positionInList) * sliceSize;
         //return firstElementPosition + new Vector3((child - positionInList) * sliceSize, 0f, 0f);
         if (layout == Layout.TopToBottom)
-            return firstElementPosition + transform.up * (child - positionInList) * sliceSize;
+            return firstElementPosition + -transform.up * (child - positionInList) * sliceSize;
         //return firstElementPosition - new Vector3(0f, (child - positionInList) * sliceSize, 0f);
         Debug.LogError("GetPositionOfChildElement: No Layout chosen! Returned Vector zero...");
         return Vector3.zero;

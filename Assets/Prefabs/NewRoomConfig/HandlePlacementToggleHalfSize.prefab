@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384956dc2998aa244817c8cc3e52afb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPushDistance: 0.035
+  maxPushDistance: 0.022
   minPushToActivate: 0.5
   stuckDistance: 0.5
   returnSpeed: 0.1
