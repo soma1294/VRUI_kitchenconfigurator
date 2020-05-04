@@ -22,12 +22,13 @@ limitations under the License.
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class OVRDebugConsole : MonoBehaviour
 {
     public ArrayList messages = new ArrayList();
     public int       maxMessages = 15;             // The max number of messages displayed
-    public Text      textMsg;                      // text string to display
+    public TextMeshPro      textMsg;                      // text string to display
 	
     // Our instance to allow this script to be called without a direct connection.
 	private static OVRDebugConsole s_Instance = null;

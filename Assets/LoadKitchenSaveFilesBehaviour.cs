@@ -55,6 +55,8 @@ public class LoadKitchenSaveFilesBehaviour : MonoBehaviour
         KitchenData kitchen = ReadJSON(index);
         Variables.loadedData = kitchen;
         Variables.loadedFile = PlayerPrefs.GetString("kitchenName" + index);
+        Debug.Log("Data = " + kitchen.furniture.ToString());
+        Debug.Log("Name = " + Variables.loadedFile);
         SceneManager.LoadScene("KitchenBuilder");
     }
 
