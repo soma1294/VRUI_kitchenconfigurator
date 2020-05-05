@@ -2,6 +2,8 @@
 
 public class TeleportingVRUI : MonoBehaviour
 {
+    public bool useHandTracking;
+    public OVRHand[] hands;
     [SerializeField, Range(1, 7)]
     private byte resolutionLevel;   // What level of resolution should the arc be  
     [SerializeField]
@@ -89,7 +91,11 @@ public class TeleportingVRUI : MonoBehaviour
             chosenAreaIsValid = true;
         }
         OVRInput.Controller controller = OVRInput.Controller.None;
-        bool isPressed = virtualButtonIsPressed || IsButtonPressed(buttonToCheck, out controller);
+        bool isPressed;
+        if (!useHandTracking)
+            isPressed = virtualButtonIsPressed || IsButtonPressed(buttonToCheck, out controller);
+        else
+            isPressed = hands[0].IsPointerPoseValid && hands[1].IsPointerPoseValid;
         EnableAll(isPressed);
         // If the trigger is pressed...
         if (isPressed)
@@ -104,6 +110,16 @@ public class TeleportingVRUI : MonoBehaviour
                 angleX = -controllerRotationEuler.x * Mathf.Deg2Rad;
                 angleY = (-controllerRotationEuler.y + 90.0f) * Mathf.Deg2Rad;
                 controllerPos = Quaternion.AngleAxis(vrPlayer.rotation.eulerAngles.y, Vector3.up) * OVRInput.GetLocalControllerPosition(controller) + vrPlayer.position;
+                heightFromDeepestPoint = controllerPos.y - deepestPoint;
+            }
+            //Use handTracking
+            else if (useHandTracking)
+            {
+                // Get position and rotation from controller relative to the CameraRig
+                controllerRotationEuler = (hands[0].PointerPose).eulerAngles;
+                angleX = -controllerRotationEuler.x * Mathf.Deg2Rad;
+                angleY = (-controllerRotationEuler.y + 90.0f) * Mathf.Deg2Rad;
+                controllerPos = Quaternion.AngleAxis(vrPlayer.rotation.eulerAngles.y, Vector3.up) * hands[0].PointerPose.position;
                 heightFromDeepestPoint = controllerPos.y - deepestPoint;
             }
             //Use virtual button

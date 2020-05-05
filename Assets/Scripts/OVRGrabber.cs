@@ -14,6 +14,7 @@ ANY KIND, either express or implied. See the License for the specific language g
 permissions and limitations under the License.
 ************************************************************************************/
 
+using OVRTouchSample;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class OVRGrabber : MonoBehaviour
 {
+    public bool handTrackingGrabber;
+    private OVRHand hand;
     // Grip trigger thresholds for picking up objects, with some hysteresis.
     public float grabBegin = 0.55f;
     public float grabEnd = 0.35f;
@@ -76,7 +79,8 @@ public class OVRGrabber : MonoBehaviour
 	protected OVRGrabbable m_grabbedObj = null;
     protected Vector3 m_grabbedObjectPosOff;
     protected Quaternion m_grabbedObjectRotOff;
-	protected Dictionary<OVRGrabbable, int> m_grabCandidates = new Dictionary<OVRGrabbable, int>();
+    protected Dictionary<OVRGrabbable, int> m_grabCandidates = new Dictionary<OVRGrabbable, int>();
+    protected OVRGrabbable m_grabCandidate = null;
 	protected bool m_operatingWithoutOVRCameraRig = true;
 
     /// <summary>
@@ -114,6 +118,8 @@ public class OVRGrabber : MonoBehaviour
 			    m_operatingWithoutOVRCameraRig = false;
 		    }
         }
+        if(handTrackingGrabber)
+            hand = GetComponent<OVRHand>();
     }
 
     protected virtual void Start()
@@ -122,7 +128,16 @@ public class OVRGrabber : MonoBehaviour
         m_lastRot = transform.rotation;
         if(m_parentTransform == null)
         {
-			m_parentTransform = gameObject.transform;
+            if (gameObject.transform.parent != null)
+            {
+                m_parentTransform = gameObject.transform.parent.transform;
+            }
+            else
+            {
+                m_parentTransform = new GameObject().transform;
+                m_parentTransform.position = Vector3.zero;
+                m_parentTransform.rotation = Quaternion.identity;
+            }
         }
 		// We're going to setup the player collision to ignore the hand collision.
 		SetPlayerIgnoreCollision(gameObject, true);
@@ -151,6 +166,8 @@ public class OVRGrabber : MonoBehaviour
         if (alreadyUpdated) return;
         alreadyUpdated = true;
 
+        if (!m_parentTransform)
+            Debug.Log("Attention: NO TRANSFORM");
         Vector3 destPos = m_parentTransform.TransformPoint(m_anchorOffsetPosition);
         Quaternion destRot = m_parentTransform.rotation * m_anchorOffsetRotation;
 
@@ -169,10 +186,12 @@ public class OVRGrabber : MonoBehaviour
         m_lastRot = transform.rotation;
 
 		float prevFlex = m_prevFlex;
-		// Update values from inputs
-		m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
-
-		CheckForGrabOrRelease(prevFlex);
+        // Update values from inputs
+        if (!handTrackingGrabber)
+            m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
+        else
+            m_prevFlex = Mathf.Max(hand.GetFingerPinchStrength(OVRHand.HandFinger.Index), hand.GetFingerPinchStrength(OVRHand.HandFinger.Middle), hand.GetFingerPinchStrength(OVRHand.HandFinger.Ring), hand.GetFingerPinchStrength(OVRHand.HandFinger.Pinky));
+        CheckForGrabOrRelease(prevFlex);
     }
 
     void OnDestroy()
@@ -191,8 +210,9 @@ public class OVRGrabber : MonoBehaviour
 
         // Add the grabbable
         int refCount = 0;
-        m_grabCandidates.TryGetValue(grabbable, out refCount);
-        m_grabCandidates[grabbable] = refCount + 1;
+        //m_grabCandidates.TryGetValue(grabbable, out refCount);
+        //m_grabCandidates[grabbable] = refCount + 1;
+        m_grabCandidate = grabbable;
     }
 
     private void OnTriggerStay(Collider otherCollider)
@@ -216,12 +236,13 @@ public class OVRGrabber : MonoBehaviour
 
         // Remove the grabbable
         int refCount = 0;
-        bool found = m_grabCandidates.TryGetValue(grabbable, out refCount);
+        //bool found = m_grabCandidates.TryGetValue(grabbable, out refCount);
+        bool found = m_grabCandidate;
         if (!found)
         {
             return;
         }
-
+        /*
         if (refCount > 1)
         {
             m_grabCandidates[grabbable] = refCount - 1;
@@ -230,6 +251,8 @@ public class OVRGrabber : MonoBehaviour
         {
             m_grabCandidates.Remove(grabbable);
         }
+        */
+        m_grabCandidate = null;
         //Disables HandHoverUpdate of the grabbed Snappable
         Snappable snappable = otherCollider.GetComponent<Snappable>();
         if (snappable)
@@ -257,6 +280,7 @@ public class OVRGrabber : MonoBehaviour
 		OVRGrabbable closestGrabbable = null;
         Collider closestGrabbableCollider = null;
 
+        /*
         // Iterate grab candidates and find the closest grabbable candidate
 		foreach (OVRGrabbable grabbable in m_grabCandidates.Keys)
         {
@@ -280,7 +304,26 @@ public class OVRGrabber : MonoBehaviour
                 }
             }
         }
-
+        */
+        bool canGrab = false;
+        if(m_grabCandidate)
+            canGrab = !(m_grabCandidate.isGrabbed && !m_grabCandidate.allowOffhandGrab);
+        if (canGrab)
+        {
+            for (int j = 0; j < m_grabCandidate.grabPoints.Length; ++j)
+            {
+                Collider grabbableCollider = m_grabCandidate.grabPoints[j];
+                // Store the closest grabbable
+                Vector3 closestPointOnBounds = grabbableCollider.ClosestPointOnBounds(m_gripTransform.position);
+                float grabbableMagSq = (m_gripTransform.position - closestPointOnBounds).sqrMagnitude;
+                if (grabbableMagSq < closestMagSq)
+                {
+                    closestMagSq = grabbableMagSq;
+                    closestGrabbable = m_grabCandidate;
+                    closestGrabbableCollider = grabbableCollider;
+                }
+            }
+        }
         // Disable grab volumes to prevent overlaps
         GrabVolumeEnable(false);
 
@@ -406,7 +449,8 @@ public class OVRGrabber : MonoBehaviour
 
         if (!m_grabVolumeEnabled)
         {
-            m_grabCandidates.Clear();
+            //m_grabCandidates.Clear();
+            m_grabCandidate = null;
         }
     }
 

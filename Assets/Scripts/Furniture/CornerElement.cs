@@ -48,7 +48,7 @@ public class CornerElement : KitchenElement {
     }
 
     public override void UpdateMaterial() {
-        Debug.Log("MaterialChange");
+        //Debug.Log("MaterialChange");
         if (Variables.workPlateMaterial != null && !materials[1].Equals(Variables.workPlateMaterial)) {
             materials[1] = Variables.workPlateMaterial;
         }

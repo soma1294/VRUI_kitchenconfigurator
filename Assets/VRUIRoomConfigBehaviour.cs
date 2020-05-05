@@ -13,6 +13,7 @@ public class VRUIRoomConfigBehaviour : MonoBehaviour {
     public FloatValueContainer depth;
     public Transform roomModel;
 
+
     // Use this for initialization
     void Awake () {
         prefs = new Prefs();
@@ -47,7 +48,8 @@ public class VRUIRoomConfigBehaviour : MonoBehaviour {
     public void startKitchenBuilder() {
         prefs.Save();
         Variables.sceneToLoadIndex = 2;
-        SceneManager.LoadScene("LoadingScene");
+        //SceneManager.LoadScene("LoadingScene");
+        SceneManager.LoadSceneAsync("LoadingScene");
     }
 
     private void setRoomModelScale() {

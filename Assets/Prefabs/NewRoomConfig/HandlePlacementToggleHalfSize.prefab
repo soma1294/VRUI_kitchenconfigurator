@@ -152,7 +152,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781632652454622057}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0.165}
   m_LocalScale: {x: 10, y: 10.000002, z: 14.285719}
   m_Children:
   - {fileID: 6583855761593246299}
@@ -162,7 +162,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0.501}
-  m_SizeDelta: {x: 0.1, y: 0.1}
+  m_SizeDelta: {x: 0.1, y: 0.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &329570489410718045
 Canvas:
@@ -459,8 +459,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 4
+  m_fontSizeBase: 4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -549,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6114641286536031304}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.51, z: -0.45}
+  m_LocalPosition: {x: 0, y: 0.51, z: -0.326}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8215375328628658039}
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697559773de0f69418d83310626615ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relativePosition: {x: 0, y: -0.04500001, z: -0.0357}
+  relativePosition: {x: 0, y: -0.016300004, z: -0.01785}
   relativeRotation: {x: 0, y: 0, z: 0, w: 1}
   relativeEulerRotation: {x: 0, y: 0, z: 0}
   anchor: 4
@@ -578,7 +578,7 @@ MonoBehaviour:
   vruiPositionerChangedTransform: 0
   parent: {fileID: 2376138500088803615}
   lastParent: {fileID: 2376138500088803615}
-  haveToUpdateRelativeValues: 1
+  haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: -0, y: -0, z: -0, w: -1.0000001}
 --- !u!114 &864235367151978401
 MonoBehaviour:
@@ -628,7 +628,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.09, y: 0.09}
+  m_SizeDelta: {x: 0.09, y: 0.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8883846442888167633
 CanvasRenderer:

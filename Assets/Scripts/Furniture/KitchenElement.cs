@@ -66,11 +66,14 @@ public abstract class KitchenElement : MonoBehaviour {
                     this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
                     previousBaseHeight = Variables.baseHeightInMM;
                 }
-                else if(tempParent.parent.gameObject.GetComponent<KitchenElement>() == null)
+                else if(tempParent.parent)
                 {
-                    float changeAmount = (Variables.baseHeightInMM - previousBaseHeight) / 1000f;
-                    this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
-                    previousBaseHeight = Variables.baseHeightInMM;
+                    if (tempParent.parent.gameObject.GetComponent<KitchenElement>() == null)
+                    {
+                        float changeAmount = (Variables.baseHeightInMM - previousBaseHeight) / 1000f;
+                        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + changeAmount, this.transform.position.z);
+                        previousBaseHeight = Variables.baseHeightInMM;
+                    }
                 }
             }
             /*

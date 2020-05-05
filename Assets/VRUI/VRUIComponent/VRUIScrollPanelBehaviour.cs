@@ -103,6 +103,8 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
             foreach (Transform child in transform)
             {
                 child.position = GetPositionOfChildElement(i, firstElementPosition, sliceSize);
+                if(child.GetComponent<VRUIPositioner>())
+                    child.GetComponent<VRUIPositioner>().RelativePosition = child.localPosition;
                 i++;
             }
         }
@@ -116,6 +118,8 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
             foreach (Transform child in transform)
             {
                 child.position = GetPositionOfChildElement(i, firstElementPosition, sliceSize);
+                if (child.GetComponent<VRUIPositioner>())
+                    child.GetComponent<VRUIPositioner>().RelativePosition = child.localPosition;
                 i++;
             }
         }
