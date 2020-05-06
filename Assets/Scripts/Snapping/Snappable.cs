@@ -87,10 +87,17 @@ public class Snappable : MonoBehaviour
         bool grabberIsRightHand = grabber.gameObject.CompareTag("Right Hand");
         if (grabberIsLeftHand)
         {
-            grabButtonDown = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch) > 0.1f;
-        } else if (grabberIsRightHand)
+            if(grabber.handTrackingGrabber)
+                grabButtonDown = 0.55f < Mathf.Max(grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Index), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Middle), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Ring), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Pinky));
+            else
+                grabButtonDown = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch) > 0.1f;
+        } 
+        else if (grabberIsRightHand)
         {
-            grabButtonDown = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch) > 0.1f;
+            if (grabber.handTrackingGrabber)
+                grabButtonDown = 0.55f < Mathf.Max(grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Index), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Middle), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Ring), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Pinky));
+            else
+                grabButtonDown = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch) > 0.1f;
         }
         if (grabButtonDown)
         {
@@ -114,7 +121,10 @@ public class Snappable : MonoBehaviour
                 parentInHand = false;
             }
         }
-        if ((grabberIsRightHand && OVRInput.GetUp(OVRInput.RawButton.RHandTrigger)) || (grabberIsLeftHand && OVRInput.GetUp(OVRInput.RawButton.LHandTrigger)))
+        bool grabButtonUp = false;
+        if (grabber.handTrackingGrabber)
+            grabButtonUp = 0.55f > Mathf.Max(grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Index), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Middle), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Ring), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Pinky));
+        if ((grabberIsRightHand && OVRInput.GetUp(OVRInput.RawButton.RHandTrigger)) || (grabberIsLeftHand && OVRInput.GetUp(OVRInput.RawButton.LHandTrigger)) || grabButtonUp)
         {
             // Detach this object from the hand
             //hand.DetachObject(gameObject);

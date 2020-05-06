@@ -6,19 +6,12 @@ public class ActivateCorrectTracking : MonoBehaviour
 {
     public OVRHand[] handTrackingModels;
     public GameObject[] controllerTrackingModels;
-
-    private OVRTouchSample.Hand test;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TeleportingVRUI teleporting;
 
     // Update is called once per frame
     void Update()
     {
-        if(handTrackingModels[0].IsTracked && handTrackingModels[1].IsTracked)
+        if (handTrackingModels[0] != null && handTrackingModels[1] != null && handTrackingModels[0].IsTracked && handTrackingModels[1].IsTracked)
         {
             //Deactivate controllerTracking controllermodels
             controllerTrackingModels[0].SetActive(false);
@@ -26,7 +19,9 @@ public class ActivateCorrectTracking : MonoBehaviour
             //Activate handTracking controllerModels
             handTrackingModels[0].gameObject.transform.GetChild(0).gameObject.SetActive(true);
             handTrackingModels[1].gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        } else if (!handTrackingModels[0].IsTracked && !handTrackingModels[1].IsTracked)
+            if(teleporting)
+                teleporting.useHandTracking = true;
+        } else if (!handTrackingModels[0].IsTracked && !handTrackingModels[1].IsTracked && OVRInput.GetDown(OVRInput.Button.Any))
         {
             //Deactivate handTracking controllermodels
             handTrackingModels[0].gameObject.transform.GetChild(0).gameObject.SetActive(false);
@@ -34,6 +29,8 @@ public class ActivateCorrectTracking : MonoBehaviour
             //Activate controllerTracking controllerModels
             controllerTrackingModels[0].SetActive(true);
             controllerTrackingModels[1].SetActive(true);
+            if(teleporting)
+                teleporting.useHandTracking = false;
         }
         //If confidence is low, dont render the hands
         if (handTrackingModels[0].HandConfidence == OVRHand.TrackingConfidence.Low)

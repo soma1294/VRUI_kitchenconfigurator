@@ -4,6 +4,7 @@ public class TeleportingVRUI : MonoBehaviour
 {
     public bool useHandTracking;
     public OVRHand[] hands;
+    public Transform playerHead;
     [SerializeField, Range(1, 7)]
     private byte resolutionLevel;   // What level of resolution should the arc be  
     [SerializeField]
@@ -95,7 +96,7 @@ public class TeleportingVRUI : MonoBehaviour
         if (!useHandTracking)
             isPressed = virtualButtonIsPressed || IsButtonPressed(buttonToCheck, out controller);
         else
-            isPressed = hands[0].IsPointerPoseValid && hands[1].IsPointerPoseValid;
+            isPressed = hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index) && hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index);
         EnableAll(isPressed);
         // If the trigger is pressed...
         if (isPressed)
@@ -103,7 +104,7 @@ public class TeleportingVRUI : MonoBehaviour
             Vector3 controllerRotationEuler, controllerPos;
             float angleX, angleY, heightFromDeepestPoint;
             //Use physical controller
-            if (!virtualButtonIsPressed)
+            if (!virtualButtonIsPressed && !useHandTracking)
             {
                 // Get position and rotation from controller relative to the CameraRig
                 controllerRotationEuler = (vrPlayer.rotation * OVRInput.GetLocalControllerRotation(controller)).eulerAngles;
@@ -119,7 +120,7 @@ public class TeleportingVRUI : MonoBehaviour
                 controllerRotationEuler = (hands[0].PointerPose).eulerAngles;
                 angleX = -controllerRotationEuler.x * Mathf.Deg2Rad;
                 angleY = (-controllerRotationEuler.y + 90.0f) * Mathf.Deg2Rad;
-                controllerPos = Quaternion.AngleAxis(vrPlayer.rotation.eulerAngles.y, Vector3.up) * hands[0].PointerPose.position;
+                controllerPos = Quaternion.AngleAxis(vrPlayer.rotation.eulerAngles.y, Vector3.up) * (playerHead.position - new Vector3(0, 0.25f, 0));
                 heightFromDeepestPoint = controllerPos.y - deepestPoint;
             }
             //Use virtual button

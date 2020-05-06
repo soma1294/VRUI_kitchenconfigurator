@@ -25,7 +25,7 @@ using UnityEngine;
 public class OVRGrabber : MonoBehaviour
 {
     public bool handTrackingGrabber;
-    private OVRHand hand;
+    public OVRHand hand;
     // Grip trigger thresholds for picking up objects, with some hysteresis.
     public float grabBegin = 0.55f;
     public float grabEnd = 0.35f;
@@ -164,10 +164,14 @@ public class OVRGrabber : MonoBehaviour
         // Don't want to MovePosition multiple times in a frame, as it causes high judder in conjunction
         // with the hand position prediction in the runtime.
         if (alreadyUpdated) return;
+        if (handTrackingGrabber && (!hand.IsTracked || hand.HandConfidence == OVRHand.TrackingConfidence.Low))
+        {
+            if(m_grabbedObj)
+                ForceRelease(m_grabbedObj);
+            return;
+        }
         alreadyUpdated = true;
 
-        if (!m_parentTransform)
-            Debug.Log("Attention: NO TRANSFORM");
         Vector3 destPos = m_parentTransform.TransformPoint(m_anchorOffsetPosition);
         Quaternion destRot = m_parentTransform.rotation * m_anchorOffsetRotation;
 
@@ -224,6 +228,7 @@ public class OVRGrabber : MonoBehaviour
         Snappable snappable = otherCollider.gameObject.GetComponent<Snappable>();
         if (snappable)
         {
+            Debug.Log("Touching snappable");
             snappable.HandHoverUpdate(this);
         }
         oGrabbable.HoverBegin(this);
