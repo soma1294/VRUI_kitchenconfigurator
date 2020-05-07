@@ -14,7 +14,11 @@ If there are errors, here are the used packages/plugins:
 - The white ball next to the UI can be grabbed to move the UI arround freely
 
 # Controls with Handtracking
-- Pinch with both hands to activate teleporting and let go to teleport
+- Do this gesture to activate the teleport arc...
+![iwata gesture](http://www.legeekretrogaming.com/geekblog/wp-content/uploads/2015/07/directly.png) 
+- ... then pinch with both hands to teleport to the loaction you're targeting. The target can be moved by looking around.
 - Make a fist while touching the kitchen element to grab it
 - Stretch your index finger to interact with the buttons
 - The white ball next to the UI can be grabbed to move the UI arround freely
+
+**Grabbing in handtrack mode is still very unreliable, controller mode is recommended**
