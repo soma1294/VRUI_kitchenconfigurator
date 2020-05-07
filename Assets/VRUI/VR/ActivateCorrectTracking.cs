@@ -6,6 +6,7 @@ public class ActivateCorrectTracking : MonoBehaviour
 {
     public OVRHand[] handTrackingModels;
     public GameObject[] controllerTrackingModels;
+    public bool useHandtrackingTeleporting;
     public TeleportingVRUI teleporting;
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class ActivateCorrectTracking : MonoBehaviour
             //Activate handTracking controllerModels
             handTrackingModels[0].gameObject.transform.GetChild(0).gameObject.SetActive(true);
             handTrackingModels[1].gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            if(teleporting)
+            if(teleporting && useHandtrackingTeleporting)
                 teleporting.useHandTracking = true;
         } else if (!handTrackingModels[0].IsTracked && !handTrackingModels[1].IsTracked && OVRInput.GetDown(OVRInput.Button.Any))
         {
@@ -29,7 +30,7 @@ public class ActivateCorrectTracking : MonoBehaviour
             //Activate controllerTracking controllerModels
             controllerTrackingModels[0].SetActive(true);
             controllerTrackingModels[1].SetActive(true);
-            if(teleporting)
+            if(teleporting && useHandtrackingTeleporting)
                 teleporting.useHandTracking = false;
         }
         //If confidence is low, dont render the hands

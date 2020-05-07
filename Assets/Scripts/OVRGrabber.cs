@@ -93,6 +93,7 @@ public class OVRGrabber : MonoBehaviour
 
 	public void ForceRelease(OVRGrabbable grabbable)
     {
+        //Debug.Log("ForceRelease");
         bool canRelease = (
             (m_grabbedObj != null) &&
             (m_grabbedObj == grabbable)
@@ -208,6 +209,7 @@ public class OVRGrabber : MonoBehaviour
 
     void OnTriggerEnter(Collider otherCollider)
     {
+        if (otherCollider.CompareTag("NotGrabbable")) return;
         // Get the grab trigger
 		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>();
         if (grabbable == null) return;
@@ -224,14 +226,13 @@ public class OVRGrabber : MonoBehaviour
         //Code used for hover
         OVRGrabbable oGrabbable = otherCollider.gameObject.GetComponent<OVRGrabbable>();
         if (!oGrabbable) return;
+        oGrabbable.HoverBegin(this);
         //Enables HandHoverUpdate of the grabbed Snappable
         Snappable snappable = otherCollider.gameObject.GetComponent<Snappable>();
-        if (snappable)
+        if (oGrabbable.hoveredBy == this && snappable)
         {
-            Debug.Log("Touching snappable");
             snappable.HandHoverUpdate(this);
         }
-        oGrabbable.HoverBegin(this);
     }
 
     void OnTriggerExit(Collider otherCollider)
@@ -258,13 +259,13 @@ public class OVRGrabber : MonoBehaviour
         }
         */
         m_grabCandidate = null;
+        grabbable.HoverEnd(this);
         //Disables HandHoverUpdate of the grabbed Snappable
         Snappable snappable = otherCollider.GetComponent<Snappable>();
-        if (snappable)
+        if (grabbable.hoveredBy == this && snappable)
         {
             snappable.HandHoverUpdate(this);
         }
-        grabbable.HoverEnd();
     }
 
     protected void CheckForGrabOrRelease(float prevFlex)
@@ -362,7 +363,6 @@ public class OVRGrabber : MonoBehaviour
                 relPos = Quaternion.Inverse(transform.rotation) * relPos;
                 m_grabbedObjectPosOff = relPos;
             }
-
             if (m_grabbedObj.snapOrientation)
             {
                 m_grabbedObjectRotOff = m_gripTransform.localRotation;
@@ -376,7 +376,6 @@ public class OVRGrabber : MonoBehaviour
                 Quaternion relOri = Quaternion.Inverse(transform.rotation) * m_grabbedObj.transform.rotation;
                 m_grabbedObjectRotOff = relOri;
             }
-
             // Note: force teleport on grab, to avoid high-speed travel to dest which hits a lot of other objects at high
             // speed and sends them flying. The grabbed object may still teleport inside of other objects, but fixing that
             // is beyond the scope of this demo.
@@ -433,7 +432,8 @@ public class OVRGrabber : MonoBehaviour
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)
     {
         m_grabbedObj.GrabEnd(linearVelocity, angularVelocity);
-        if(m_parentHeldObject) m_grabbedObj.transform.parent = null;
+        m_grabbedObj.HoverEnd(this);
+        if (m_parentHeldObject) m_grabbedObj.transform.parent = null;
         SetPlayerIgnoreCollision(m_grabbedObj.gameObject, false);
         m_grabbedObj = null;
     }

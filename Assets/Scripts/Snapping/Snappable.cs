@@ -122,9 +122,13 @@ public class Snappable : MonoBehaviour
             }
         }
         bool grabButtonUp = false;
+        float maxPinch;
         if (grabber.handTrackingGrabber)
-            grabButtonUp = 0.55f > Mathf.Max(grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Index), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Middle), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Ring), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Pinky));
-        if ((grabberIsRightHand && OVRInput.GetUp(OVRInput.RawButton.RHandTrigger)) || (grabberIsLeftHand && OVRInput.GetUp(OVRInput.RawButton.LHandTrigger)) || grabButtonUp)
+        {
+            maxPinch = Mathf.Max(grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Index), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Middle), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Ring), grabber.hand.GetFingerPinchStrength(OVRHand.HandFinger.Pinky));
+            grabButtonUp = 0.55f > maxPinch;
+        } 
+        if (inHand && (grabberIsRightHand && !OVRInput.Get(OVRInput.RawButton.RHandTrigger) && !grabber.handTrackingGrabber) || (grabberIsLeftHand && !OVRInput.Get(OVRInput.RawButton.LHandTrigger) && !grabber.handTrackingGrabber) || grabButtonUp)
         {
             // Detach this object from the hand
             //hand.DetachObject(gameObject);
@@ -142,7 +146,6 @@ public class Snappable : MonoBehaviour
             this.transform.parent = snapObject?.children?.transform;
 
 
-
             inHand = false;
             Snappable[] childs = this.GetComponentsInChildren<Snappable>();
             for (int i = 0; i < childs.Length; i++)
@@ -155,6 +158,15 @@ public class Snappable : MonoBehaviour
             {
                 elements[i].redraw = true;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        OVRGrabber grabber = other.GetComponent<OVRGrabber>();
+        if (grabber == hoverGrabber)
+        {
+            hoverGrabber = null;
         }
     }
 

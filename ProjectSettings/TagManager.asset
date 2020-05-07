@@ -10,6 +10,7 @@ TagManager:
   - Right Index
   - VRUICanvas
   - Grabbable
+  - NotGrabbable
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Teleport
   - Player
   - VRUI
-  - 
+  - GestureColliders
   - 
   - 
   - 

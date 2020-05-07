@@ -51,12 +51,14 @@ public class OVRGrabbable : MonoBehaviour
 
     virtual public void HoverBegin(OVRGrabber hand)
     {
-        m_hoveredBy = hand;
+        if(m_hoveredBy == null)
+            m_hoveredBy = hand;
     }
 
-    virtual public void HoverEnd()
+    virtual public void HoverEnd(OVRGrabber hand)
     {
-        m_hoveredBy = null;
+        if(hand == m_hoveredBy)
+            m_hoveredBy = null;
     }
 
     //End of custom code

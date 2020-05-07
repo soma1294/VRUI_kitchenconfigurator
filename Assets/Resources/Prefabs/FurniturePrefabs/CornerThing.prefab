@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114896586638784714}
   m_Layer: 8
   m_Name: SnapColliderFront
-  m_TagString: Untagged
+  m_TagString: NotGrabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 114222595694142510}
   m_Layer: 8
   m_Name: SnapColliderLeft
-  m_TagString: Untagged
+  m_TagString: NotGrabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
