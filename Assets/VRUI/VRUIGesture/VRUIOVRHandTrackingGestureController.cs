@@ -17,6 +17,7 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
     public float minPinchStrength;
     public float maxPinchStrengthForPointing;
     public Collider[] collidersToDeactivateOnPinch;
+    public Collider[] collidersToDeactivateOnPointing;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,13 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                         collider.enabled = false;
                     }
                 }
+                if (collidersToDeactivateOnPointing.Length > 0)
+                {
+                    foreach (Collider collider in collidersToDeactivateOnPointing)
+                    {
+                        collider.enabled = true;
+                    }
+                }
             }
             //Pointing Gesture
             else if (indexFingerPointingConfidence == OVRHand.TrackingConfidence.High && pinchStrength < maxPinchStrengthForPointing)
@@ -70,6 +78,13 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                     foreach (Collider collider in collidersToDeactivateOnPinch)
                     {
                         collider.enabled = true;
+                    }
+                }
+                if (collidersToDeactivateOnPointing.Length > 0)
+                {
+                    foreach (Collider collider in collidersToDeactivateOnPointing)
+                    {
+                        collider.enabled = false;
                     }
                 }
             }
@@ -91,6 +106,13 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                         collider.enabled = true;
                     }
                 }
+                if (collidersToDeactivateOnPointing.Length > 0)
+                {
+                    foreach (Collider collider in collidersToDeactivateOnPointing)
+                    {
+                        collider.enabled = true;
+                    }
+                }
             }
         }
         //Controller gesture recognition
@@ -102,14 +124,80 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                 if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) >= minPinchStrength)
                 {
                     VRUIGesture = VRUIGesture.Pinch;
+                    if (deactivateThumbColliderOnPointing)
+                    {
+                        thumbCollider.enabled = true;
+                    }
+                    if (deactivateGrabColliderOnPointing)
+                    {
+                        grabCollider.enabled = true;
+                    }
+                    if (collidersToDeactivateOnPinch.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPinch)
+                        {
+                            collider.enabled = false;
+                        }
+                    }
+                    if (collidersToDeactivateOnPointing.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPointing)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
                 }
                 else if (!OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger))
                 {
                     VRUIGesture = VRUIGesture.IndexPointing;
+                    if (deactivateThumbColliderOnPointing)
+                    {
+                        thumbCollider.enabled = false;
+                    }
+                    if (deactivateGrabColliderOnPointing)
+                    {
+                        grabCollider.enabled = false;
+                    }
+                    if (collidersToDeactivateOnPinch.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPinch)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
+                    if (collidersToDeactivateOnPointing.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPointing)
+                        {
+                            collider.enabled = false;
+                        }
+                    }
                 }
                 else
                 {
                     VRUIGesture = VRUIGesture.None;
+                    if (deactivateThumbColliderOnPointing)
+                    {
+                        thumbCollider.enabled = true;
+                    }
+                    if (deactivateGrabColliderOnPointing)
+                    {
+                        grabCollider.enabled = true;
+                    }
+                    if (collidersToDeactivateOnPinch.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPinch)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
+                    if (collidersToDeactivateOnPointing.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPointing)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
                 }
             }
             //Right hand
@@ -118,14 +206,80 @@ public class VRUIOVRHandTrackingGestureController : VRUIGestureController
                 if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) >= minPinchStrength)
                 {
                     VRUIGesture = VRUIGesture.Pinch;
+                    if (deactivateThumbColliderOnPointing)
+                    {
+                        thumbCollider.enabled = true;
+                    }
+                    if (deactivateGrabColliderOnPointing)
+                    {
+                        grabCollider.enabled = true;
+                    }
+                    if (collidersToDeactivateOnPinch.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPinch)
+                        {
+                            collider.enabled = false;
+                        }
+                    }
+                    if (collidersToDeactivateOnPointing.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPointing)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
                 }
                 else if (!OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger))
                 {
                     VRUIGesture = VRUIGesture.IndexPointing;
+                    if (deactivateThumbColliderOnPointing)
+                    {
+                        thumbCollider.enabled = false;
+                    }
+                    if (deactivateGrabColliderOnPointing)
+                    {
+                        grabCollider.enabled = false;
+                    }
+                    if (collidersToDeactivateOnPinch.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPinch)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
+                    if (collidersToDeactivateOnPointing.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPointing)
+                        {
+                            collider.enabled = false;
+                        }
+                    }
                 }
                 else
                 {
                     VRUIGesture = VRUIGesture.None;
+                    if (deactivateThumbColliderOnPointing)
+                    {
+                        thumbCollider.enabled = true;
+                    }
+                    if (deactivateGrabColliderOnPointing)
+                    {
+                        grabCollider.enabled = true;
+                    }
+                    if (collidersToDeactivateOnPinch.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPinch)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
+                    if (collidersToDeactivateOnPointing.Length > 0)
+                    {
+                        foreach (Collider collider in collidersToDeactivateOnPointing)
+                        {
+                            collider.enabled = true;
+                        }
+                    }
                 }
             }
         }

@@ -40,7 +40,7 @@ namespace OVRTouchSample
         private HandPose m_defaultGrabPose = null;
 
         private Collider[] m_colliders = null;
-        private bool m_collisionEnabled = true;
+        public bool m_collisionEnabled = true;
         private OVRGrabber m_grabber;
 
         List<Renderer> m_showAfterInputFocusAcquired;
@@ -93,7 +93,7 @@ namespace OVRTouchSample
             float flex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
 
             bool collisionEnabled = m_grabber.grabbedObject == null && flex >= THRESH_COLLISION_FLEX;
-            CollisionEnable(collisionEnabled);
+            //CollisionEnable(collisionEnabled);
 
             UpdateAnimStates();
         }

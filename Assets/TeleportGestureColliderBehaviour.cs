@@ -8,9 +8,16 @@ public class TeleportGestureColliderBehaviour : MonoBehaviour
 
     public TeleportActivationBehaviour teleportActivation;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Left Hand") && leftCollider)
+            teleportActivation.ActivateLeftButton();
+        else if (other.CompareTag("Right Hand") && !leftCollider)
+            teleportActivation.ActivateRightButton();
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Stay");
         if (other.CompareTag("Left Hand") && leftCollider)
             teleportActivation.ActivateLeftButton();
         else if (other.CompareTag("Right Hand") && !leftCollider)
