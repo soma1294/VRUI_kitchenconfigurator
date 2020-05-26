@@ -132,6 +132,9 @@ public class VRUIButtonBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
+        if (Application.isPlaying)
+            if (!BaseMaterial)
+                BaseMaterial = PhysicalButton.GetComponent<Renderer>().material;
         lastScale = transform.localScale;
     }
 
@@ -173,7 +176,6 @@ public class VRUIButtonBehaviour : MonoBehaviour
         GetVRUIButtonUp = !getVRUIButton;
     }
 
-    //TODO: Check if buttonup/down can be invoked here instead of the seperate methods
     private void FireButtonEvents()
     {
         if (getVRUIButton)
@@ -202,19 +204,19 @@ public class VRUIButtonBehaviour : MonoBehaviour
             }
         }
         //Move button according to the position of the finger/hand that touches it, if our maxPushDistance is bigger than 0.
-        if (buttonIsTouched && maxPushDistance > 0)
+        if (buttonIsTouched && MaxPushDistance > 0)
         {
             currentTouchPosition = touchingObjectTransform.position;
             deltaTouchPosition = currentTouchPosition - startTouchPosition;
             float maxDeltaFinger = Mathf.Max(Mathf.Abs(deltaTouchPosition.x), Mathf.Abs(deltaTouchPosition.y), Mathf.Abs(deltaTouchPosition.z)); //TODO: Vector algebra for this?
 
-            if (Mathf.Abs(deltaTouchPosition.y) < maxPushDistance && maxDeltaFinger > 0.0f)
+            if (Mathf.Abs(deltaTouchPosition.y) < MaxPushDistance && maxDeltaFinger > 0.0f)
             {
                 //Vector3 targetPos = new Vector3(physicalButton.transform.localPosition.x, physicalButton.transform.localPosition.y - maxDeltaFinger / physicalButton.transform.lossyScale.y, physicalButton.transform.localPosition.z);
                 Vector3 targetPos = new Vector3(physicalButton.transform.localPosition.x, physicalButton.transform.localPosition.y - maxDeltaFinger, physicalButton.transform.localPosition.z);
                 //The button should not be able to move farther away than the maxPushDistance 
                 //TODO: Better calculation. maybe the buttons local position is not (0, 0, 0)
-                if (targetPos.y < -maxPushDistance)
+                if (targetPos.y < -MaxPushDistance)
                 {
                     //physicalButton.transform.localPosition = new Vector3(physicalButton.transform.localPosition.x, -maxPushDistance, physicalButton.transform.localPosition.z);
                     physicalButton.transform.localPosition = Vector3.Lerp(physicalButton.transform.localPosition, new Vector3(physicalButton.transform.localPosition.x, -maxPushDistance, physicalButton.transform.localPosition.z), stiffness * 2);

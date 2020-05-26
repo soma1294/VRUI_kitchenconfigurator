@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 9938568}
   - component: {fileID: 9938567}
   - component: {fileID: 9938566}
+  - component: {fileID: 9938569}
   m_Layer: 0
   m_Name: PlusButton
   m_TagString: Untagged
@@ -249,6 +250,22 @@ MonoBehaviour:
   lastParent: {fileID: 565233045}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &9938569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9938564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &10632896
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +490,7 @@ MonoBehaviour:
   maxDisplayedElements: 2
   layout: 1
   scrollStepSize: 1
-  canOverStep: 0
+  canOverstep: 0
   positionInList: 0
   zPositionOfChildren: 0.001
   lastChildCount: 1
@@ -1005,6 +1022,7 @@ GameObject:
   - component: {fileID: 155409023}
   - component: {fileID: 155409022}
   - component: {fileID: 155409025}
+  - component: {fileID: 155409026}
   m_Layer: 0
   m_Name: SouthToggle
   m_TagString: Untagged
@@ -1171,6 +1189,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToControl: {fileID: 1236447217}
+--- !u!114 &155409026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155409020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &157020823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,6 +1561,7 @@ GameObject:
   - component: {fileID: 177061509}
   - component: {fileID: 177061508}
   - component: {fileID: 177061511}
+  - component: {fileID: 177061512}
   m_Layer: 0
   m_Name: AddWindowButton
   m_TagString: Untagged
@@ -1662,6 +1697,22 @@ MonoBehaviour:
   - {fileID: 1236447219}
   - {fileID: 1984883381}
   direction: 0
+--- !u!114 &177061512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177061506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1001 &178184060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4069,6 +4120,7 @@ GameObject:
   - component: {fileID: 227823064}
   - component: {fileID: 227823063}
   - component: {fileID: 227823062}
+  - component: {fileID: 227823065}
   m_Layer: 0
   m_Name: ForwardButton
   m_TagString: Untagged
@@ -4186,6 +4238,22 @@ MonoBehaviour:
   lastParent: {fileID: 652986788}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &227823065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227823060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &234243948
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,7 +5084,7 @@ MonoBehaviour:
   maxDisplayedElements: 4
   layout: 0
   scrollStepSize: 1
-  canOverStep: 0
+  canOverstep: 0
   positionInList: 0
   zPositionOfChildren: 0
   lastChildCount: 0
@@ -5193,6 +5261,7 @@ GameObject:
   - component: {fileID: 420945294}
   - component: {fileID: 420945293}
   - component: {fileID: 420945296}
+  - component: {fileID: 420945297}
   m_Layer: 0
   m_Name: MaterialsToggle
   m_TagString: Untagged
@@ -5348,6 +5417,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToControl: {fileID: 1602880781}
+--- !u!114 &420945297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420945291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &447816900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,7 +5586,7 @@ MonoBehaviour:
   maxDisplayedElements: 4
   layout: 0
   scrollStepSize: 1
-  canOverStep: 0
+  canOverstep: 0
   positionInList: 0
   zPositionOfChildren: 0
   lastChildCount: 0
@@ -6461,7 +6546,7 @@ MonoBehaviour:
   maxDisplayedElements: 4
   layout: 0
   scrollStepSize: 1
-  canOverStep: 0
+  canOverstep: 0
   positionInList: 0
   zPositionOfChildren: 0
   lastChildCount: 0
@@ -7271,6 +7356,7 @@ GameObject:
   - component: {fileID: 755050047}
   - component: {fileID: 755050046}
   - component: {fileID: 755050049}
+  - component: {fileID: 755050050}
   m_Layer: 0
   m_Name: EastToggle
   m_TagString: Untagged
@@ -7437,6 +7523,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToControl: {fileID: 19545013}
+--- !u!114 &755050050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755050044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &836355507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7618,6 +7720,7 @@ GameObject:
   - component: {fileID: 856947049}
   - component: {fileID: 856947048}
   - component: {fileID: 856947047}
+  - component: {fileID: 856947050}
   m_Layer: 0
   m_Name: PlusButton
   m_TagString: Untagged
@@ -7735,6 +7838,22 @@ MonoBehaviour:
   lastParent: {fileID: 961657779}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &856947050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856947045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &863598333
 GameObject:
   m_ObjectHideFlags: 0
@@ -8877,6 +8996,7 @@ GameObject:
   - component: {fileID: 984769624}
   - component: {fileID: 984769623}
   - component: {fileID: 984769622}
+  - component: {fileID: 984769625}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -8994,6 +9114,22 @@ MonoBehaviour:
   lastParent: {fileID: 1752430625}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &984769625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984769620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &986620404
 GameObject:
   m_ObjectHideFlags: 0
@@ -9536,6 +9672,7 @@ GameObject:
   - component: {fileID: 1022702436}
   - component: {fileID: 1022702435}
   - component: {fileID: 1022702438}
+  - component: {fileID: 1022702439}
   m_Layer: 0
   m_Name: WestToggle
   m_TagString: Untagged
@@ -9702,6 +9839,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToControl: {fileID: 1984883379}
+--- !u!114 &1022702439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022702433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1025498272
 GameObject:
   m_ObjectHideFlags: 0
@@ -11155,6 +11308,7 @@ GameObject:
   - component: {fileID: 1225871395}
   - component: {fileID: 1225871394}
   - component: {fileID: 1225871393}
+  - component: {fileID: 1225871396}
   m_Layer: 0
   m_Name: ForwardButton
   m_TagString: Untagged
@@ -11272,6 +11426,22 @@ MonoBehaviour:
   lastParent: {fileID: 1752430625}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &1225871396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225871391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1236447217
 GameObject:
   m_ObjectHideFlags: 0
@@ -11353,7 +11523,7 @@ MonoBehaviour:
   maxDisplayedElements: 2
   layout: 1
   scrollStepSize: 1
-  canOverStep: 0
+  canOverstep: 0
   positionInList: 0
   zPositionOfChildren: 0.001
   lastChildCount: 1
@@ -11440,6 +11610,7 @@ GameObject:
   - component: {fileID: 1251759558}
   - component: {fileID: 1251759557}
   - component: {fileID: 1251759556}
+  - component: {fileID: 1251759559}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -11557,6 +11728,22 @@ MonoBehaviour:
   lastParent: {fileID: 1090136828}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &1251759559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251759554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1277557335
 GameObject:
   m_ObjectHideFlags: 0
@@ -12198,6 +12385,7 @@ GameObject:
   - component: {fileID: 1311498144}
   - component: {fileID: 1311498143}
   - component: {fileID: 1311498146}
+  - component: {fileID: 1311498147}
   m_Layer: 0
   m_Name: NorthToggle
   m_TagString: Untagged
@@ -12364,6 +12552,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToControl: {fileID: 1605095043}
+--- !u!114 &1311498147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311498141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1328352325
 GameObject:
   m_ObjectHideFlags: 0
@@ -12469,6 +12673,7 @@ GameObject:
   - component: {fileID: 1329465726}
   - component: {fileID: 1329465725}
   - component: {fileID: 1329465724}
+  - component: {fileID: 1329465727}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -12586,6 +12791,22 @@ MonoBehaviour:
   lastParent: {fileID: 652986788}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &1329465727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329465722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1330587877
 GameObject:
   m_ObjectHideFlags: 0
@@ -12598,6 +12819,7 @@ GameObject:
   - component: {fileID: 1330587881}
   - component: {fileID: 1330587880}
   - component: {fileID: 1330587879}
+  - component: {fileID: 1330587882}
   m_Layer: 0
   m_Name: MinusButton
   m_TagString: Untagged
@@ -12715,6 +12937,22 @@ MonoBehaviour:
   lastParent: {fileID: 961657779}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &1330587882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330587877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1339601309
 GameObject:
   m_ObjectHideFlags: 0
@@ -12728,6 +12966,7 @@ GameObject:
   - component: {fileID: 1339601311}
   - component: {fileID: 1339601310}
   - component: {fileID: 1339601314}
+  - component: {fileID: 1339601315}
   m_Layer: 0
   m_Name: MeasurementsToggle
   m_TagString: Untagged
@@ -12883,6 +13122,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToControl: {fileID: 1286084585}
+--- !u!114 &1339601315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339601309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1348088961
 GameObject:
   m_ObjectHideFlags: 0
@@ -14746,6 +15001,7 @@ GameObject:
   - component: {fileID: 1601883468}
   - component: {fileID: 1601883467}
   - component: {fileID: 1601883471}
+  - component: {fileID: 1601883472}
   m_Layer: 0
   m_Name: WindowsToggle
   m_TagString: Untagged
@@ -14901,6 +15157,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToControl: {fileID: 908953476}
+--- !u!114 &1601883472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601883466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1602880781
 GameObject:
   m_ObjectHideFlags: 0
@@ -15086,7 +15358,7 @@ MonoBehaviour:
   maxDisplayedElements: 2
   layout: 1
   scrollStepSize: 1
-  canOverStep: 0
+  canOverstep: 0
   positionInList: 0
   zPositionOfChildren: 0.001
   lastChildCount: 1
@@ -16595,6 +16867,7 @@ GameObject:
   - component: {fileID: 1781614105}
   - component: {fileID: 1781614104}
   - component: {fileID: 1781614103}
+  - component: {fileID: 1781614106}
   m_Layer: 0
   m_Name: MinusButton
   m_TagString: Untagged
@@ -16712,6 +16985,22 @@ MonoBehaviour:
   lastParent: {fileID: 565233045}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &1781614106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781614101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &1792160118
 GameObject:
   m_ObjectHideFlags: 0
@@ -17717,6 +18006,7 @@ GameObject:
   - component: {fileID: 1883824954}
   - component: {fileID: 1883824953}
   - component: {fileID: 1883824952}
+  - component: {fileID: 1883824955}
   m_Layer: 0
   m_Name: ForwardButton
   m_TagString: Untagged
@@ -17834,6 +18124,22 @@ MonoBehaviour:
   lastParent: {fileID: 1090136828}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &1883824955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883824950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1001 &1910012541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18714,7 +19020,7 @@ MonoBehaviour:
   maxDisplayedElements: 2
   layout: 1
   scrollStepSize: 1
-  canOverStep: 0
+  canOverstep: 0
   positionInList: 0
   zPositionOfChildren: 0.001
   lastChildCount: 1
@@ -19089,6 +19395,7 @@ GameObject:
   - component: {fileID: 2041984121}
   - component: {fileID: 2041984120}
   - component: {fileID: 2041984119}
+  - component: {fileID: 2041984122}
   m_Layer: 0
   m_Name: MinusButton
   m_TagString: Untagged
@@ -19206,6 +19513,22 @@ MonoBehaviour:
   lastParent: {fileID: 1376658166}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &2041984122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041984117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &2050504789
 GameObject:
   m_ObjectHideFlags: 0
@@ -19218,6 +19541,7 @@ GameObject:
   - component: {fileID: 2050504793}
   - component: {fileID: 2050504792}
   - component: {fileID: 2050504791}
+  - component: {fileID: 2050504794}
   m_Layer: 0
   m_Name: PlusButton
   m_TagString: Untagged
@@ -19335,6 +19659,22 @@ MonoBehaviour:
   lastParent: {fileID: 1376658166}
   haveToUpdateRelativeValues: 0
   lastParentRotationValue: {x: 0.38268352, y: -0, z: -0, w: -0.9238796}
+--- !u!114 &2050504794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050504789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &2057773034
 GameObject:
   m_ObjectHideFlags: 0

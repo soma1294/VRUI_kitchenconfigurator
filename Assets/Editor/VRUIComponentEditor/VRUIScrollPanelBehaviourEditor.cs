@@ -1,33 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// The Custom Editor Script for the VRUIScrollPanelBehaviour Script. Among other things creates the buttons in the inspector, that can be used
+/// to preview the step function of the script.
+/// </summary>
 [CustomEditor(typeof(VRUIScrollPanelBehaviour)), CanEditMultipleObjects]
 public class VRUIScrollPanelBehaviourEditor : Editor
 {
     private const float BUTTONWIDTH = 120f;
     private const string MAX_DISP_ELEM_TOOLTIP = "The maximum amount of displayed elements. This determines how the available space of the panel gets split. " +
                                                  "Can not be set higher than the amount of child objects of this object.";
-    private const string CAN_OVER_STEP_TOOLTIP = "If this is true calling StepForward() at the end of the list will bring the user back to the start " +
+    private const string CAN_OVERSTEP_TOOLTIP = "If this is true calling StepForward() at the end of the list will bring the user back to the start " +
                                                  "and calling StepBackward() at the start of the list will bring the user to the end of the list.";
     private const string SCROLL_STEP_SIZE_TOOLTIP = "Defines how many elements we scroll if StepForward() or StepBackward() gets called. Can't be higher than maxDisplayElements.";
 
     VRUIScrollPanelBehaviour m_target;
-    //PanelProperties
-    SerializedProperty panelSizeXProp;
-    SerializedProperty panelSizeYProp;
     //ScrollPanelProperties
     SerializedProperty maxDisplayedElementsProp;
     SerializedProperty layoutProp;
     SerializedProperty scrollStepSizeProp;
-    SerializedProperty canOverStepProp;
+    SerializedProperty canOverstepProp;
     SerializedProperty zPositionOfChildrenProp;
 
     private void OnEnable()
     {
-        //panelSizeXProp = serializedObject.FindProperty("panelSizeX");
-        //panelSizeYProp = serializedObject.FindProperty("panelSizeY");
         m_target = m_target = (VRUIScrollPanelBehaviour)target;
         m_target.panel = m_target.GetComponent<VRUIPanelBehaviour>();
 
@@ -40,7 +43,7 @@ public class VRUIScrollPanelBehaviourEditor : Editor
         maxDisplayedElementsProp = serializedObject.FindProperty("maxDisplayedElements");
         layoutProp = serializedObject.FindProperty("layout");
         scrollStepSizeProp = serializedObject.FindProperty("scrollStepSize");
-        canOverStepProp = serializedObject.FindProperty("canOverStep");
+        canOverstepProp = serializedObject.FindProperty("canOverstep");
         zPositionOfChildrenProp = serializedObject.FindProperty("zPositionOfChildren");
     }
 
@@ -50,10 +53,8 @@ public class VRUIScrollPanelBehaviourEditor : Editor
         base.OnInspectorGUI();
         DrawScrollPanelFields();
         EditorGUILayout.Space();
-        //EditorGUILayout.LabelField("Panel Dimensions", EditorStyles.boldLabel);
-        //DrawSizeFields();
         m_target = (VRUIScrollPanelBehaviour)target;
-        
+        //If there are no child objects, we can not use the preview functions, because there is nothing to scroll through.
         if (m_target.transform.childCount < 1)
         {
             EditorGUILayout.HelpBox("Add at least one child to use the preview functions.", MessageType.Warning);
@@ -62,19 +63,12 @@ public class VRUIScrollPanelBehaviourEditor : Editor
         {
             DrawStepButtons();
         }
-        //This value cant be smaller than 1
+        //This value cant be smaller than 1, because there should always be at least one object shown.
         if (maxDisplayedElementsProp.intValue < 1)
             maxDisplayedElementsProp.intValue = 1;
         //Call functions after applying new values
         if (serializedObject.ApplyModifiedProperties())
-        {/*
-            foreach (VRUIPanelBehaviour panel in targets)
-            {
-                if ((PrefabUtility.GetPrefabAssetType(panel) != PrefabAssetType.Regular) || (PrefabUtility.GetPrefabAssetType(panel) != PrefabAssetType.Variant))
-                {
-                    panel.RedrawPanel();
-                }
-            }*/
+        {
             foreach (VRUIScrollPanelBehaviour scrollPanel in targets)
             {
                 if ((PrefabUtility.GetPrefabAssetType(scrollPanel) != PrefabAssetType.Regular) || (PrefabUtility.GetPrefabAssetType(scrollPanel) != PrefabAssetType.Variant))
@@ -85,18 +79,12 @@ public class VRUIScrollPanelBehaviourEditor : Editor
             }
         }
     }
-    /*
-    private void DrawSizeFields()
-    {
-        panelSizeXProp.floatValue = EditorGUILayout.FloatField("Panel Size X", panelSizeXProp.floatValue);
-        panelSizeYProp.floatValue = EditorGUILayout.FloatField("Panel Size Y", panelSizeYProp.floatValue);
-    }*/
 
     private void DrawScrollPanelFields()
     {
         EditorGUILayout.LabelField("Scroll Settings", EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(scrollStepSizeProp, new GUIContent("Scroll Step Size", SCROLL_STEP_SIZE_TOOLTIP));
-        EditorGUILayout.PropertyField(canOverStepProp, new GUIContent("Can Over Step", CAN_OVER_STEP_TOOLTIP));
+        EditorGUILayout.PropertyField(canOverstepProp, new GUIContent("Can Overstep", CAN_OVERSTEP_TOOLTIP));
         EditorGUILayout.PropertyField(maxDisplayedElementsProp, new GUIContent("Max Displayed Elements", MAX_DISP_ELEM_TOOLTIP));
         string[] choices = System.Enum.GetNames(typeof(VRUIScrollPanelBehaviour.Layout));
         EditorGUILayout.BeginHorizontal();
@@ -106,6 +94,9 @@ public class VRUIScrollPanelBehaviourEditor : Editor
         EditorGUILayout.PropertyField(zPositionOfChildrenProp, new GUIContent("Z Position Of Children", "The local z-position of the child objects."));
     }
 
+    /// <summary>
+    /// Creates the buttons that can be used to preview the scroll functions.
+    /// </summary>
     private void DrawStepButtons()
     {
         EditorGUILayout.Space();
@@ -136,29 +127,4 @@ public class VRUIScrollPanelBehaviourEditor : Editor
         }
         EditorGUILayout.EndHorizontal();
     }
-    /*
-    public void OnSceneGUI()
-    {
-        m_target = (VRUIScrollPanelBehaviour)target;
-        //Draw the size chooser gizmo.
-        float panelSizeX = m_target.panel.PanelSizeX;
-        float panelSizeY = m_target.panel.PanelSizeY;
-
-        float size = HandleUtility.GetHandleSize(m_target.gameObject.transform.position) * 0.7f;
-
-        //We need to check if something changed in the inspector so we can record the change for Unity's undo history.
-        EditorGUI.BeginChangeCheck();
-        Handles.color = Color.magenta;
-        panelSizeX = Handles.ScaleSlider(panelSizeX, m_target.gameObject.transform.position, m_target.gameObject.transform.right, m_target.gameObject.transform.rotation, size, 0.5f);
-        Handles.color = Color.yellow;
-        panelSizeY = Handles.ScaleSlider(panelSizeY, m_target.gameObject.transform.position, m_target.gameObject.transform.up, m_target.gameObject.transform.rotation, size, 0.5f);
-        if (EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObjects(new Object[] { m_target.GetComponent<VRUIPanelBehaviour>(), m_target.transform }, "Undo VRUI Panel Size");
-
-            m_target.panel.PanelSizeX = panelSizeX;
-            m_target.panel.PanelSizeY = panelSizeY;
-            m_target.panel.RedrawPanel();
-        }
-    }*/
 }

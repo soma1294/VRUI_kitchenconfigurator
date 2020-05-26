@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 6452130609041646106}
   - component: {fileID: 2895569217808382293}
   - component: {fileID: 3969204874648411335}
+  - component: {fileID: 6149867866930385320}
   m_Layer: 0
   m_Name: FileButton
   m_TagString: Untagged
@@ -403,6 +404,22 @@ MonoBehaviour:
   getVRUIButton: 0
   getVRUIButtonUp: 0
   physicalButton: {fileID: 1428254191017882144}
+--- !u!114 &6149867866930385320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097008970894454311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac65f58b5ff82bc41af76fa0cc566183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &3487300900645243887
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7194869662698281069}
   - component: {fileID: 4107151273964222255}
   - component: {fileID: 8698444314234668807}
+  - component: {fileID: -5528426983123250646}
   m_Layer: 0
   m_Name: HandlePlacementToggleHalfSize
   m_TagString: Untagged
@@ -125,6 +126,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawerConfig: {fileID: 0}
   objectPreview: {fileID: 0}
+--- !u!114 &-5528426983123250646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51311130263216671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc169a9cc77514ab2db45d6613da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrationFrequency: 0.3
+  vibrationAmplitude: 0.3
+  vibrationDuration: 0.1
+  vibrate: 1
 --- !u!1 &781632652454622057
 GameObject:
   m_ObjectHideFlags: 0

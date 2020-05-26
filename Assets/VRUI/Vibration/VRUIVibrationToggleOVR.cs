@@ -8,13 +8,14 @@ public class VRUIVibrationToggleOVR : VRUIVibration
     [Tooltip("If this is true the controller will vibrate.")]
     private bool vibrate = true;
 
-    private VRUIGestureController.HandSide hand;
-
     public override void Vibrate()
     {
         if (vibrate)
         {
-            if (GetComponent<VRUIToggleBehaviour>().LastRegisteredGestureController.Hand == VRUIGestureController.HandSide.left)
+            VRUIGestureController gestureController = GetComponent<VRUIToggleBehaviour>().LastRegisteredGestureController;
+            if (!gestureController)
+                return;
+            if (gestureController.Hand == VRUIGestureController.HandSide.left)
             {
                 StartCoroutine(OVRVibration(VibrationFrequency, VibrationAmplitude, VibrationDuration, OVRInput.Controller.LTouch));
             }

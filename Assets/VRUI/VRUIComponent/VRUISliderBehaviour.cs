@@ -32,10 +32,6 @@ public class VRUISliderBehaviour : MonoBehaviour
     [Tooltip("The z-position of the knob, relative to the path.")]
     float zPositionKnob = -0.025f;
     [Header("Interaction Settings")]
-    //TODO: is stifness still necessary?
-    //[SerializeField]
-    //[Tooltip("How fast the knob adjusts its position. 0 means it never reaches the new position, 1 it reaches it almost instantly.")]
-    //private float stifness = 0.5f;
     [SerializeField]
     [Tooltip("If the object/hand that touches the knob is farther away than this, the knob wont be moved.")]
     private float maxAllowedDistanceToMove = 0.2f;
@@ -302,7 +298,6 @@ public class VRUISliderBehaviour : MonoBehaviour
         PhysicalKnob.transform.localPosition = new Vector3(targetPos.x, targetPos.y, targetPos.z + zPositionKnob);
     }
 
-    //TODO: FIX see Update Knob Position
     private void UpdateCurrentValue()
     {
         Vector3 knobWithoutZ = new Vector3(PhysicalKnob.transform.localPosition.x, PhysicalKnob.transform.localPosition.y);
@@ -421,7 +416,6 @@ public class VRUISliderBehaviour : MonoBehaviour
         }
     }
 
-    //TODO: Aufpassen ob Formel robust genung für kleinen Max und grossen Min Wert ist.
     public float MinValue
     {
         get { return minValue; }
@@ -515,5 +509,10 @@ public class VRUISliderBehaviour : MonoBehaviour
     {
         get { return physicalKnob; }
         set { physicalKnob = value; }
+    }
+
+    public VRUIGestureController LastRegisteredGestureController
+    {
+        get { return gestureController; }
     }
 }

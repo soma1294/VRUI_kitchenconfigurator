@@ -93,19 +93,18 @@ public class VRUIButtonBehaviourEditor : Editor
             if (collider.GetType() == typeof(BoxCollider))
             {
                 Vector3 size = ((BoxCollider)collider).size;
-                Vector3 buttonSize = new Vector3(size.x * button.transform.localScale.x, size.y * button.transform.localScale.y, size.z * button.transform.localScale.z);
                 //The position of the maxPushDistance preview box (magenta)
                 Vector3 previewPosition = new Vector3(0f, -m_target.MaxPushDistance / button.transform.localScale.y, 0f);
                 Matrix4x4 matrix = button.transform.localToWorldMatrix * Matrix4x4.Translate(previewPosition);
                 Handles.matrix = matrix;
                 Handles.color = Color.magenta;
-                Handles.DrawWireCube(Vector3.zero, Vector3.one);
+                Handles.DrawWireCube(Vector3.zero, size);
                 //The position of the minPushDistance preview box (yellow)
                 previewPosition = new Vector3(0f, -(m_target.MaxPushDistance * m_target.MinPushToActivate) / button.transform.localScale.y, 0f);
                 matrix = button.transform.localToWorldMatrix * Matrix4x4.Translate(previewPosition);
                 Handles.matrix = matrix;
                 Handles.color = Color.yellow;
-                Handles.DrawWireCube(Vector3.zero, Vector3.one);
+                Handles.DrawWireCube(Vector3.zero, size);
             }
         }
     }

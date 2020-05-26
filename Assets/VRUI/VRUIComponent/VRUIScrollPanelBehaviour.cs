@@ -26,7 +26,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
     [HideInInspector]
     [Tooltip("If this is true calling StepForward() at the end of the list will bring the user back to the start " +
              "and calling StepBackward() at the start of the list will bring the user to the end of the list.")]
-    private bool canOverStep = false;
+    private bool canOverstep = false;
     [SerializeField]
     [HideInInspector]
     [Tooltip("The position of the first displayed element of the children (top child in the hierarchy that is displayed).")]
@@ -208,7 +208,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
     public void StepForward()
     {
         int elementListSize = transform.childCount;
-        if (positionInList + MaxDisplayedElements >= elementListSize && canOverStep)
+        if (positionInList + MaxDisplayedElements >= elementListSize && canOverstep)
         {
             StepToStart();
         }
@@ -231,7 +231,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
 
     public void StepBackward()
     {
-        if (positionInList == 0 && canOverStep)
+        if (positionInList == 0 && canOverstep)
         {
             StepToEnd();
         }
@@ -253,7 +253,6 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
 
     public void StepToStart()
     {
-        //Debug.Log("StepToStart");
         positionInList = 0;
         DisplayCorrectChildElements();
         ArrangeElements();
@@ -261,7 +260,6 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
 
     public void StepToEnd()
     {
-        //Debug.Log("StepToEnd");
         positionInList = transform.childCount - MaxDisplayedElements;
         DisplayCorrectChildElements();
         ArrangeElements();

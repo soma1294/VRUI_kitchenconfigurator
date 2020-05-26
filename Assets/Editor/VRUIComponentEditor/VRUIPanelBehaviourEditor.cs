@@ -1,8 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// The Custom Editor Script for the VRUIPanelBehaviour Script.
+/// </summary>
 [CustomEditor(typeof(VRUIPanelBehaviour)), CanEditMultipleObjects]
 public class VRUIPanelBehaviourEditor : Editor
 {

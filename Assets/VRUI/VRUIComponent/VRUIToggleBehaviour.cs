@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-//TODO: Improve VRUIToggle. Maybe dont use VRUIButton as template.
+
 [RequireComponent(typeof(Rigidbody))]
 [ExecuteInEditMode]
 public class VRUIToggleBehaviour : MonoBehaviour
@@ -136,7 +134,6 @@ public class VRUIToggleBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        //TODO: Bei anderen interaktiven Komponenten anpassen, auch variable oben ändern damit in Inspector änderbar
         if(Application.isPlaying)
             if(!BaseMaterial)
                 BaseMaterial = PhysicalToggle.GetComponent<Renderer>().material;
@@ -179,7 +176,6 @@ public class VRUIToggleBehaviour : MonoBehaviour
         GetVRUIToggleUp = !ToggleIsStuck;
     }
 
-    //TODO: Check if toggleup/down can be invoked here instead of the seperate methods
     private void FireToggleEvents()
     {
         if (ToggleIsStuck)

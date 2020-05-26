@@ -79,18 +79,7 @@ public class VRUIPanelBehaviour : MonoBehaviour
     protected void FirstDrawPanel()
     {
         //Only draw the mesh the first time, when no mesh exists
-        /*
-        if (Application.isPlaying)
-        {
-            if (GetComponent<MeshFilter>().mesh != null)
-                return;
-        } else
-        {
-            if (GetComponent<MeshFilter>().sharedMesh != null)
-                return;
-        }*/
         lastPanelSize = new Vector2(PanelSizeX, PanelSizeY);
-        //TODO: Check if it still leaks when this if is not executing
         if (Application.isPlaying)
         {
             Destroy(meshFront);
@@ -173,7 +162,6 @@ public class VRUIPanelBehaviour : MonoBehaviour
     public void RedrawPanel()
     {
         lastPanelSize = new Vector2(PanelSizeX, PanelSizeY);
-        //TODO: Check if it still leaks when this if is not executing
         if (Application.isPlaying)
         {
             Destroy(meshFront);
@@ -257,7 +245,7 @@ public class VRUIPanelBehaviour : MonoBehaviour
         transform.position = pos;
         transform.SetParent(parent);
 
-        //The anchors now need to be repositioned TODO: Beste Methode?
+        //The anchors now need to be repositioned
         foreach (Transform child in transform)
         {
             VRUIPositioner positioner = child.gameObject.GetComponent<VRUIPositioner>();
