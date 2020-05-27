@@ -1,8 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// The Custom Editor Script for the VRUIButtonBehaviour Script. Among other things draws the wire preview for the scene view.
+/// </summary>
 [CustomEditor(typeof(VRUIButtonBehaviour)), CanEditMultipleObjects]
 public class VRUIButtonBehaviourEditor : Editor
 {
@@ -89,7 +96,7 @@ public class VRUIButtonBehaviourEditor : Editor
         {
             GameObject button = m_target.PhysicalButton;
             Collider collider = button.GetComponent<Collider>();
-            //Create a box preview
+            //Creates a box preview
             if (collider.GetType() == typeof(BoxCollider))
             {
                 Vector3 size = ((BoxCollider)collider).size;

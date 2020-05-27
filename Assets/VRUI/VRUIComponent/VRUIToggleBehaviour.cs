@@ -1,6 +1,15 @@
-﻿using UnityEngine;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
+using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Simulates a 3D button that needs to be physically touched to use it. It gets stuck after pressing it making it behave like a toggle.
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 [ExecuteInEditMode]
 public class VRUIToggleBehaviour : MonoBehaviour
@@ -230,7 +239,7 @@ public class VRUIToggleBehaviour : MonoBehaviour
         //If the toggle is not touched and is not stuck slowly return it to its startPosition
         else if (currentPosition != startPosition && !toggleIsStuck)
         {
-            waitTime += Time.deltaTime;
+            waitTime += Time.fixedDeltaTime;
             //Only move the toggle to its start position after the chosen delay
             if (waitTime >= returnDelay)
             {
@@ -239,7 +248,7 @@ public class VRUIToggleBehaviour : MonoBehaviour
         }
         else if(currentPosition != startPosition && toggleIsStuck)
         {
-            waitTime += Time.deltaTime;
+            waitTime += Time.fixedDeltaTime;
             //Only move the toggle to its start position after the chosen delay
             if (waitTime >= returnDelay)
             {

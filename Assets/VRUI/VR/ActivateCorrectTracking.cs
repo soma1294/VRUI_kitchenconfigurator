@@ -1,7 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 
+/// <summary>
+/// Helps changing the input style from handtracking to controllers and the other way arround. Assumes handtracking as the default style.
+/// </summary>
 public class ActivateCorrectTracking : MonoBehaviour
 {
     public OVRHand[] handTrackingModels;

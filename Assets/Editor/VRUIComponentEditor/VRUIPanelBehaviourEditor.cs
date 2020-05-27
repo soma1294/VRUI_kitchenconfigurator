@@ -8,14 +8,13 @@ using UnityEngine;
 using UnityEditor;
 
 /// <summary>
-/// The Custom Editor Script for the VRUIPanelBehaviour Script.
+/// The Custom Editor Script for the VRUIPanelBehaviour Script. Among other things creates the gizmo that can be used to change the panels size.
 /// </summary>
 [CustomEditor(typeof(VRUIPanelBehaviour)), CanEditMultipleObjects]
 public class VRUIPanelBehaviourEditor : Editor
 {
     SerializedProperty panelSizeXProp;
     SerializedProperty panelSizeYProp;
-
     private void OnEnable()
     {
         panelSizeXProp = serializedObject.FindProperty("panelSizeX");
@@ -50,6 +49,9 @@ public class VRUIPanelBehaviourEditor : Editor
         DrawSizeChooserGizmo();
     }
 
+    /// <summary>
+    /// Creates the gizmo that can be used to change the panels size.
+    /// </summary>
     private void DrawSizeChooserGizmo()
     {
         VRUIPanelBehaviour m_target = (VRUIPanelBehaviour)target;
@@ -67,7 +69,7 @@ public class VRUIPanelBehaviourEditor : Editor
         panelSizeY = Handles.ScaleSlider(panelSizeY, m_target.gameObject.transform.position, m_target.gameObject.transform.up, m_target.gameObject.transform.rotation, size, 0.5f);
         if (EditorGUI.EndChangeCheck())
         {
-            Undo.RecordObjects(new Object[] { m_target.GetComponent<VRUIPanelBehaviour>(), m_target.transform }, "Undo VRUI Panel Size");
+            Undo.RecordObjects(new Object[] { m_target.GetComponent<VRUIPanelBehaviour>(), m_target.transform }, "VRUI Panel Size");
 
             m_target.PanelSizeX = panelSizeX;
             m_target.PanelSizeY = panelSizeY;

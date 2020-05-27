@@ -1,14 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This component helps placing and managing textboxes in 3D space.
+/// </summary>
 public class VRUITextcontainerBehaviour : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("If this is true, the text will always \"look\" at the main camera of the scene.")]
     private bool billboardBehaviourActive;
-    private Vector3 startRotation;
 
     private GameObject textcontainer;
     private TextMeshPro textMesh;
@@ -16,7 +22,6 @@ public class VRUITextcontainerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        startRotation = transform.eulerAngles;
         textcontainer = transform.Find("TMPro Text").gameObject;
         if (textcontainer)
         {

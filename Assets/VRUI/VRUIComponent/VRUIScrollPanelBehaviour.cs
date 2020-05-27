@@ -1,9 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 
 /// <summary>
-/// Blocks the transform of it's child objects.
+/// Makes it possible to scroll through its child objects and blocks the transform of those objects.
 /// </summary>
 [RequireComponent(typeof(VRUIPanelBehaviour))]
 public class VRUIScrollPanelBehaviour : MonoBehaviour
@@ -17,7 +21,6 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
     [HideInInspector]
     [Tooltip("Defines how the child elements get arranged.")]
     private Layout layout = Layout.LeftToRight;
-    //[Header("Scroll Settings")]
     [SerializeField]
     [HideInInspector]
     [Tooltip("Defines how many elements we scroll if StepForward() or StepBackward() gets called. Can't be higher than maxDisplayElements.")]
@@ -71,7 +74,6 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         if (scrollStepSize < 1)
             scrollStepSize = 1;
         //If a child was added reposition elements.
-        //Debug.Log("if: lastChildCount = " + lastChildCount + ";childCount = " + transform.childCount);
         if (Application.isPlaying)
         {
             if (transform.childCount > 0 && lastChildCount != transform.childCount)
@@ -79,15 +81,13 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
                 DisplayCorrectChildElements();
                 ArrangeElements();
             }
-        }/*
-        else if(transform.childCount > 0 && lastChildCount != transform.childCount)
-        {
-            DisplayCorrectChildElements();
-            ArrangeElements();
-        }*/
+        }
         lastChildCount = transform.childCount;
     }
 
+    /// <summary>
+    /// Positions the children depending on the amount and the chosen layout.
+    /// </summary>
     public void ArrangeElements()
     {
         float sliceSize;
@@ -96,9 +96,7 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         {
             sliceSize = SliceSizeVertically();
             //The position of the first element is half the size of the panel plus half the size of one slice from the center of the panel.
-            //firstElementPosition = transform.position - new Vector3((PanelSizeX/2) - (sliceSize / 2), 0f, zPositionOfChildren);
             firstElementPosition = transform.position - (transform.right * ((panel.PanelSizeX / 2) - (sliceSize / 2))) - (transform.forward * zPositionOfChildren);
-            //Debug.Log("firstElementPosition=" + firstElementPosition);
             int i = 0;
             foreach (Transform child in transform)
             {
@@ -112,7 +110,6 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         {
             sliceSize = SliceSizeHorizontally();
             //The position of the first element is half the size of the panel plus half the size of one slice from the center of the panel.
-            //firstElementPosition = transform.position + new Vector3(0f, (PanelSizeY / 2) - (sliceSize / 2), zPositionOfChildren);
             firstElementPosition = transform.position + (transform.up * ((panel.PanelSizeY / 2) - (sliceSize / 2))) - (transform.forward * zPositionOfChildren);
             int i = 0;
             foreach (Transform child in transform)
@@ -130,6 +127,10 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Helps by calculating the vertical distance between two child objects.
+    /// </summary>
+    /// <returns>The vertical distance between two child objects.</returns>
     private float SliceSizeVertically()
     {
         if (transform.childCount >= MaxDisplayedElements)
@@ -142,6 +143,10 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Helps by calculating the horizontal distance between two child objects.
+    /// </summary>
+    /// <returns>The horizontal distance between two child objects.</returns>
     private float SliceSizeHorizontally()
     {
         if (transform.childCount >= MaxDisplayedElements)
@@ -154,24 +159,28 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns the position of the child with the specified index in relation to the first childs position.
+    /// </summary>
+    /// <param name="child">The index of the child for which we want the position.</param>
+    /// <param name="firstElementPosition">The position of the first child.</param>
+    /// <param name="sliceSize">The distance between two children.</param>
+    /// <returns>The position of the child with the specified index.</returns>
     private Vector3 GetPositionOfChildElement(int child, Vector3 firstElementPosition, float sliceSize)
     {
         if (layout == Layout.LeftToRight)
             return firstElementPosition + transform.right * (child - positionInList) * sliceSize;
-        //return firstElementPosition + new Vector3((child - positionInList) * sliceSize, 0f, 0f);
         if (layout == Layout.TopToBottom)
             return firstElementPosition + -transform.up * (child - positionInList) * sliceSize;
-        //return firstElementPosition - new Vector3(0f, (child - positionInList) * sliceSize, 0f);
         Debug.LogError("GetPositionOfChildElement: No Layout chosen! Returned Vector zero...");
         return Vector3.zero;
     }
 
+    /// <summary>
+    /// Deactivates all hidden children and activates all currently viewable children.
+    /// </summary>
     public void DisplayCorrectChildElements()
     {
-        /*foreach (Transform child in transform)
-        {
-            child.gameObject.SetActive(false);
-        }*/
         if (MaxDisplayedElements <= transform.childCount)
         {
             for (int i = positionInList; i < (positionInList + MaxDisplayedElements); i++)
@@ -205,6 +214,10 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Steps forward in the list of children. If overstep is set to true, will step to the start of the list if the
+    /// end was reached and StepForward() was called again.
+    /// </summary>
     public void StepForward()
     {
         int elementListSize = transform.childCount;
@@ -226,9 +239,12 @@ public class VRUIScrollPanelBehaviour : MonoBehaviour
             DisplayCorrectChildElements();
             ArrangeElements();
         }
-        //Debug.Log("childCount=" + transform.childCount + "; positionInList=" + positionInList);
     }
 
+    /// <summary>
+    /// Steps backward in the list of children. If overstep is set to true, will step to the end of the list if the
+    /// start was reached and StepBackward() was called again.
+    /// </summary>
     public void StepBackward()
     {
         if (positionInList == 0 && canOverstep)

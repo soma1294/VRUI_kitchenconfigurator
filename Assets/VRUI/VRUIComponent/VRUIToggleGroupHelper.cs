@@ -1,7 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 
+/// <summary>
+/// Simulates a toggle group. If one of the toggles in the list was pressed all other toggles get unstuck.
+/// </summary>
 public class VRUIToggleGroupHelper : MonoBehaviour
 {
     [SerializeField]
@@ -23,7 +30,6 @@ public class VRUIToggleGroupHelper : MonoBehaviour
         {
             if (toggle.ToggleIsStuck && toggle.name != name)
             {
-                //Debug.Log("ToggleWithNameNowUnstuck = " + toggle.name);
                 toggle.ToggleIsStuck = false;
             }
         }

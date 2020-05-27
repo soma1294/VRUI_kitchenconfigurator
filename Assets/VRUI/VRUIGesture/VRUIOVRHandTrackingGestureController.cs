@@ -1,7 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************//*
+Created as part of a Bsc in Computer Science for the BFH Biel
+Created by:   Steven Henz
+Date:         26.05.20
+Email:        steven.henz93@gmail.com
+************************************************************************************/
 using UnityEngine;
 
+/// <summary>
+/// Demonstrates how the VRUIGestureController class can be implemented to recognize gestures. Specifically made for the Oculus Quest for both controllers
+/// and handtracking.
+/// </summary>
 public class VRUIOVRHandTrackingGestureController : VRUIGestureController
 {
     private OVRHand ovrHand;
