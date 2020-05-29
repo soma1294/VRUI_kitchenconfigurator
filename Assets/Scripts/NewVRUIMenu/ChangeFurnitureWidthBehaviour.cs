@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChangeFurnitureWidthBehaviour : MonoBehaviour
 {
     public ObjectPreviewBehaviour objectPreview;
+    public VRUISliderBehaviour sliderBehaviour;
 
     private int maxIndex;
     private int currentIndex;
@@ -15,6 +16,11 @@ public class ChangeFurnitureWidthBehaviour : MonoBehaviour
     {
         currentIndex = 2;
         maxIndex = Variables.widthsInMM.Length - 1;
+        if (sliderBehaviour)
+        {
+            sliderBehaviour.MaxValue = maxIndex;
+            sliderBehaviour.MinValue = 0;
+        }
         textcontainerBehaviour = GetComponent<VRUITextcontainerBehaviour>();
         textcontainerBehaviour.ChangeTextTo(Variables.widthsInMM[currentIndex] + " mm");
     }
@@ -42,6 +48,22 @@ public class ChangeFurnitureWidthBehaviour : MonoBehaviour
         else
         {
             currentIndex--;
+        }
+        objectPreview.SetWidthIndex(currentIndex);
+        textcontainerBehaviour.ChangeTextTo(Variables.widthsInMM[currentIndex] + " mm");
+    }
+
+    public void SetIndex(float index)
+    {
+        if (index < 0)
+        {
+            currentIndex = 0;
+        } else if (index > maxIndex)
+        {
+            currentIndex = maxIndex;
+        } else
+        {
+            currentIndex = (int)index;
         }
         objectPreview.SetWidthIndex(currentIndex);
         textcontainerBehaviour.ChangeTextTo(Variables.widthsInMM[currentIndex] + " mm");

@@ -9,8 +9,11 @@ public class VRUIRoomConfigBehaviour : MonoBehaviour {
     private Prefs prefs;
 
     public FloatValueContainer height;
+    public VRUISliderBehaviour heightSlider;
     public FloatValueContainer width;
+    public VRUISliderBehaviour widthSlider;
     public FloatValueContainer depth;
+    public VRUISliderBehaviour depthSlider;
     public Transform roomModel;
 
 
@@ -20,8 +23,11 @@ public class VRUIRoomConfigBehaviour : MonoBehaviour {
         prefs.Load();
         setRoomModelScale();
         height.value = prefs.roomHeight;
+        heightSlider.StartValue = prefs.roomHeight;
         width.value = prefs.roomWidth;
+        widthSlider.StartValue = prefs.roomWidth;
         depth.value = prefs.roomDepth;
+        depthSlider.StartValue = prefs.roomDepth;
     }
 
     public void SetHeight(float howMuch) {

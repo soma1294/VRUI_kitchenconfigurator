@@ -9,8 +9,6 @@ public class FloatValueContainer : MonoBehaviour
     public float minValue;
     public float maxValue;
 
-    private Prefs prefs;
-
     [System.Serializable]
     public class FloatValueContainerOnValueChanged : UnityEvent<float> { }
     public FloatValueContainerOnValueChanged OnValueChanged = new FloatValueContainerOnValueChanged();
@@ -44,6 +42,19 @@ public class FloatValueContainer : MonoBehaviour
         else
             value -= amount;
         if(textcontainer)
+            textcontainer.ChangeTextTo(value.ToString("00.00 m"));
+        OnValueChanged.Invoke(value);
+    }
+
+    public void SetAmount(float amount)
+    {
+        if (amount < minValue)
+            value = minValue;
+        else if (amount > maxValue)
+            value = maxValue;
+        else 
+            value = amount;
+        if (textcontainer)
             textcontainer.ChangeTextTo(value.ToString("00.00 m"));
         OnValueChanged.Invoke(value);
     }
