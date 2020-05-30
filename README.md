@@ -14,7 +14,7 @@ If you still run into problems, make sure to follow the following instructions:
 #### I can't install the package on my Quest
 [How to connect your quest and setup the build settings](https://developer.oculus.com/documentation/unity/unity-enable-device/)
 
-#### AndroidManifest is missing
+#### AndroidManifest is missing or hand-tracking does not work
 If for some reason the file Assets > Plugins > Android > AdroidManifest.xml does not exist here is how to create it: 
 
 In the Unity Menubar click Oculus > Tools > Create store-compatible AndroidManifest.xml. This will create a folder Plugins > Android with the file AndroidManifest.xml. To enable Handtracking we need to edit this file. Copying and pasting the following text should work:
