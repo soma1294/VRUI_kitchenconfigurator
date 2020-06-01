@@ -9,7 +9,7 @@ Use one of the following versions to start editing the project:
   - 2019.2.8f1 or newer
   - Version 2019.3 or newer not fully compatible.
 
-In the Build Settings change the plattform to android.
+In the Build Settings change the plattform to Android.
 
 After connecting your Oculus Quest, you can Build and Run the project to test it.
 
