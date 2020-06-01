@@ -4,7 +4,14 @@
 Basic instructions by Oculus on how to install Unity and set it up for Quest development:
 [How to Setup Unity to develop for Oculus Quest](https://developer.oculus.com/documentation/unity/book-unity-gsg/)
 
-After cloning the repo add it in the Unity Hub. It should work out of the box.
+After cloning the repo add it in the Unity Hub.
+Use one of the following versions to start editing the project:
+  - 2019.2.8f1 or newer
+  - Version 2019.3 or newer not fully compatible.
+
+In the Build Settings change the plattform to android.
+
+After connecting your Oculus Quest, you can Build and Run the project to test it.
 
 ### Project is not working
 
@@ -43,10 +50,6 @@ In the Unity Menubar click Oculus > Tools > Create store-compatible AndroidManif
 Make sure the following settings in your Project Settings are set:
   - Under Other Settings > Identification make sure the Minimum API Level is set to "Android 5.0 'Lollipop' (API Level 21)"
   - Under XR Settings, enable Virtual Reality Support.
-
-### Unity Version: 
-  - 2019.2.8f1 or newer
-  - Version 2019.3 or newer not fully compatible.
 
 ### Additional Packages/Plugins necessary: 
   - Oculus Integration
