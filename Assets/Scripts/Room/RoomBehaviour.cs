@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomBehaviour : MonoBehaviour {
-    public float height = 1f;
-    public float width = 1f;
-    public float depth = 1f;
+    public float height = 2f;
+    public float width = 2f;
+    public float depth = 2f;
 
     public GameObject wallNorth; //Positive Z
     public GameObject wallSouth; //Negative Z
