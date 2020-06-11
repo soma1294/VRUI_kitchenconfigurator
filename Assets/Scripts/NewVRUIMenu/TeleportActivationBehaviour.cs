@@ -16,6 +16,8 @@ public class TeleportActivationBehaviour : MonoBehaviour
 
     private void Start()
     {
+        //if (!teleporting.useHandTracking)
+            //enabled = false;
         leftHandObject = leftHand.gameObject;
         rightHandObject = rightHand.gameObject;
     }
