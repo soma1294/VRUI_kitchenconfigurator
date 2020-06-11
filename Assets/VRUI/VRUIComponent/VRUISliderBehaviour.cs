@@ -293,21 +293,12 @@ public class VRUISliderBehaviour : MonoBehaviour
         }
     }
 
-    public void AddValueToCurrentValue(float value)
-    {
-        float newValue = currentValue + value;
-        if (newValue >= maxValue)
-            newValue = maxValue;
-        if (newValue <= minValue)
-            newValue = minValue;
-        UpdateKnobPosition();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform == touchingObjectTransform)
             return;
-        gestureController = other.attachedRigidbody.gameObject.GetComponent<VRUIGestureController>();
+        if(other.attachedRigidbody)
+            gestureController = other.attachedRigidbody.gameObject.GetComponent<VRUIGestureController>();
         if (useGestureController)
         {
             if (locked)
@@ -331,7 +322,8 @@ public class VRUISliderBehaviour : MonoBehaviour
     {
         if (other.transform == touchingObjectTransform)
             return;
-        gestureController = other.attachedRigidbody.gameObject.GetComponent<VRUIGestureController>();
+        if (other.attachedRigidbody)
+            gestureController = other.attachedRigidbody.gameObject.GetComponent<VRUIGestureController>();
         if (useGestureController)
         {
             if (locked)

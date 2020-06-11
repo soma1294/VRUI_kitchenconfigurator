@@ -96,7 +96,7 @@ public class VRUIPositionerEditor : Editor
         {
             m_target.SetupAnchor();
         }
-        PrefabUtility.RecordPrefabInstancePropertyModifications(m_target.gameObject);
+        //PrefabUtility.RecordPrefabInstancePropertyModifications(m_target.gameObject);
     }
 
     /// <summary>
